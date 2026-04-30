@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Villa Leonessa — Brand Book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Cinzel:wght@400;500;600&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --night:#0D0A06;
+  --gold:#C9A84C;
+  --gold-light:#E8D49A;
+  --gold-pale:#F5EBD0;
+  --terra:#C4543A;
+  --terra-light:#E8A090;
+  --ivory:#F5EFE0;
+  --ivory-dark:#E8E0CC;
+  --stone:#8A7F72;
+  --zellige:#3B6B84;
+  --sage:#7A8C6E;
+  --shadow-night:#1A1410;
+  --mid:#2C241A;
+  --display:'Cormorant Garamond',Georgia,serif;
+  --title:'Cinzel',serif;
+  --body:'Jost','Helvetica Neue',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--night);color:var(--ivory);font-family:var(--body);font-weight:300;line-height:1.7;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;line-height:1.15}
+.cinzel{font-family:var(--title);letter-spacing:0.15em;text-transform:uppercase}
+.italic{font-style:italic}
+.gold{color:var(--gold)}
+.terra{color:var(--terra)}
+.ivory{color:var(--ivory)}
+.stone{color:var(--stone)}
+.small-caps{font-variant:small-caps;letter-spacing:0.1em}
+.ornament{display:flex;align-items:center;gap:1.5rem;margin:2rem 0}
+.ornament::before,.ornament::after{content:'';flex:1;height:0.5px;background:var(--gold);opacity:0.4}
+.ornament span{font-family:var(--title);font-size:11px;letter-spacing:0.3em;color:var(--gold);white-space:nowrap}
+section{position:relative;overflow:hidden}
+.page-full{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:80px 60px;text-align:center}
+.page-split{display:grid;grid-template-columns:1fr 1fr;min-height:100vh}
+.content-block{padding:80px 70px;display:flex;flex-direction:column;justify-content:center}
+.bg-night{background:var(--night)}
+.bg-mid{background:var(--mid)}
+.bg-ivory{background:var(--ivory)}
+.bg-terra{background:var(--terra)}
+.bg-gold{background:var(--gold)}
+.bg-zellige{background:var(--zellige)}
+.border-gold{border:0.5px solid rgba(201,168,76,0.3)}
+.border-gold-full{border:1px solid var(--gold)}
+#cover{min-height:100vh;background:var(--night);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:80px 60px;position:relative}
+.cover-border{position:absolute;top:30px;left:30px;right:30px;bottom:30px;border:0.5px solid rgba(201,168,76,0.35);pointer-events:none}
+.cover-border::before{content:'';position:absolute;top:8px;left:8px;right:8px;bottom:8px;border:0.5px solid rgba(201,168,76,0.15)}
+.cover-corner{position:absolute;width:24px;height:24px}
+.cover-corner.tl{top:22px;left:22px;border-top:1px solid var(--gold);border-left:1px solid var(--gold)}
+.cover-corner.tr{top:22px;right:22px;border-top:1px solid var(--gold);border-right:1px solid var(--gold)}
+.cover-corner.bl{bottom:22px;left:22px;border-bottom:1px solid var(--gold);border-left:1px solid var(--gold)}
+.cover-corner.br{bottom:22px;right:22px;border-bottom:1px solid var(--gold);border-right:1px solid var(--gold)}
+.monogram-svg{margin-bottom:40px}
+.cover-title{font-family:var(--title);font-size:clamp(42px,6vw,80px);letter-spacing:0.25em;color:var(--ivory);text-transform:uppercase;margin-bottom:6px;font-weight:400}
+.cover-sub{font-family:var(--title);font-size:clamp(12px,1.5vw,16px);letter-spacing:0.5em;color:var(--gold);text-transform:uppercase;margin-bottom:48px;font-weight:400}
+.cover-location{font-family:var(--display);font-size:clamp(14px,1.5vw,18px);font-style:italic;color:var(--stone);letter-spacing:0.05em}
+.cover-rule{width:80px;height:0.5px;background:var(--gold);margin:20px auto}
+.cover-tagline{font-family:var(--display);font-size:clamp(11px,1.2vw,14px);letter-spacing:0.35em;color:rgba(201,168,76,0.6);text-transform:uppercase}
+.section-num{font-family:var(--title);font-size:10px;letter-spacing:0.5em;color:var(--gold);opacity:0.6;margin-bottom:16px}
+.section-title-xl{font-size:clamp(52px,7vw,96px);line-height:1.05;margin-bottom:24px}
+.section-title-lg{font-size:clamp(36px,5vw,64px);line-height:1.1;margin-bottom:20px}
+.section-title-md{font-size:clamp(28px,3.5vw,48px);line-height:1.15;margin-bottom:16px}
+.section-body{font-size:clamp(14px,1.3vw,16px);line-height:1.8;color:var(--stone);max-width:580px;margin-bottom:24px;font-weight:300}
+.zellige-pattern{position:absolute;right:-120px;top:50%;transform:translateY(-50%);width:380px;height:380px;opacity:0.06;background-image:linear-gradient(45deg,var(--gold) 25%,transparent 25%),linear-gradient(-45deg,var(--gold) 25%,transparent 25%),linear-gradient(45deg,transparent 75%,var(--gold) 75%),linear-gradient(-45deg,transparent 75%,var(--gold) 75%);background-size:40px 40px;background-position:0 0,0 20px,20px -20px,-20px 0}
+.atlas-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(ellipse at center,rgba(201,168,76,0.04) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.quote-block{border-left:2px solid var(--gold);padding:24px 40px;margin:40px 0;background:rgba(201,168,76,0.04)}
+.quote-text{font-family:var(--display);font-size:clamp(22px,3vw,38px);line-height:1.4;font-style:italic;color:var(--ivory-dark);margin-bottom:16px}
+.quote-attr{font-family:var(--title);font-size:11px;letter-spacing:0.35em;color:var(--gold)}
+.palette-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0;margin:48px 0}
+.swatch{aspect-ratio:1;position:relative;overflow:hidden;cursor:default}
+.swatch-inner{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:16px}
+.swatch-name{font-family:var(--title);font-size:10px;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:4px;font-weight:400}
+.swatch-hex{font-family:'Courier New',monospace;font-size:12px;opacity:0.7}
+.swatch-label{font-family:var(--display);font-size:11px;font-style:italic;opacity:0.6;margin-top:2px}
+.type-row{padding:32px 0;border-bottom:0.5px solid rgba(201,168,76,0.15);display:grid;grid-template-columns:140px 1fr;gap:40px;align-items:start}
+.type-label{padding-top:8px}
+.type-role{font-family:var(--title);font-size:10px;letter-spacing:0.35em;color:var(--gold);display:block;margin-bottom:4px}
+.type-spec{font-family:var(--body);font-size:11px;color:var(--stone);line-height:1.6}
+.type-sample-xl{font-family:var(--display);font-size:72px;line-height:1;font-weight:300;color:var(--ivory)}
+.type-sample-lg{font-family:var(--display);font-size:42px;line-height:1.15;font-weight:400;color:var(--ivory)}
+.type-sample-cinzel{font-family:var(--title);font-size:18px;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase}
+.type-sample-body{font-family:var(--body);font-size:16px;line-height:1.75;font-weight:300;color:var(--stone);max-width:480px}
+.type-sample-caption{font-family:var(--body);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone)}
+.logo-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:48px 0}
+.logo-cell{padding:60px 40px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px}
+.logo-cell-dark{background:#0D0A06}
+.logo-cell-light{background:var(--ivory)}
+.logo-cell-gold{background:var(--gold)}
+.logo-cell-terra{background:var(--terra)}
+.logo-label{font-family:var(--title);font-size:10px;letter-spacing:0.4em;color:var(--stone);text-transform:uppercase;margin-top:8px}
+.app-card{border:0.5px solid rgba(201,168,76,0.2);background:rgba(201,168,76,0.02);padding:48px;margin-bottom:32px;position:relative}
+.app-card::before{content:'';position:absolute;top:0;left:0;width:40px;height:2px;background:var(--gold)}
+.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:48px 0}
+.pillar{padding:40px 32px;background:rgba(201,168,76,0.03);border:0.5px solid rgba(201,168,76,0.12)}
+.pillar-icon{font-family:var(--display);font-size:48px;font-style:italic;color:var(--gold);opacity:0.4;margin-bottom:16px;line-height:1}
+.pillar-title{font-family:var(--title);font-size:12px;letter-spacing:0.3em;color:var(--gold);margin-bottom:12px;text-transform:uppercase}
+.pillar-body{font-family:var(--body);font-size:13px;line-height:1.7;color:var(--stone);font-weight:300}
+.photo-rule-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin:48px 0}
+.photo-rule{padding:32px;border-top:2px solid var(--gold)}
+.photo-rule.do{border-top-color:var(--sage)}
+.photo-rule.dont{border-top-color:var(--terra)}
+.photo-rule-badge{font-family:var(--title);font-size:10px;letter-spacing:0.35em;margin-bottom:12px;text-transform:uppercase}
+.photo-rule.do .photo-rule-badge{color:var(--sage)}
+.photo-rule.dont .photo-rule-badge{color:var(--terra)}
+.photo-rule-title{font-family:var(--display);font-size:22px;color:var(--ivory);margin-bottom:8px}
+.photo-rule-body{font-family:var(--body);font-size:13px;color:var(--stone);line-height:1.7;font-weight:300}
+.do-dont-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:48px 0}
+.do-block,.dont-block{padding:40px}
+.do-block{background:rgba(122,140,110,0.06);border-top:2px solid var(--sage)}
+.dont-block{background:rgba(196,84,58,0.06);border-top:2px solid var(--terra)}
+.do-label{font-family:var(--title);font-size:10px;letter-spacing:0.4em;color:var(--sage);margin-bottom:20px;text-transform:uppercase}
+.dont-label{font-family:var(--title);font-size:10px;letter-spacing:0.4em;color:var(--terra);margin-bottom:20px;text-transform:uppercase}
+.rule-list{list-style:none}
+.rule-list li{font-family:var(--body);font-size:13px;color:var(--stone);line-height:1.6;padding:8px 0;border-bottom:0.5px solid rgba(201,168,76,0.1);font-weight:300;padding-left:16px;position:relative}
+.rule-list li::before{position:absolute;left:0;top:8px}
+.do-block .rule-list li::before{content:'✓';color:var(--sage);font-size:11px}
+.dont-block .rule-list li::before{content:'×';color:var(--terra);font-size:13px}
+.card-mockup{width:340px;height:200px;position:relative;background:var(--night);border:0.5px solid rgba(201,168,76,0.4);padding:28px 32px;display:flex;flex-direction:column;justify-content:space-between}
+.card-mockup::before{content:'';position:absolute;top:8px;left:8px;right:8px;bottom:8px;border:0.5px solid rgba(201,168,76,0.12);pointer-events:none}
+.card-name{font-family:var(--title);font-size:13px;letter-spacing:0.25em;color:var(--ivory)}
+.card-title-small{font-family:var(--display);font-size:12px;font-style:italic;color:var(--gold);margin-top:2px}
+.card-info{font-family:var(--body);font-size:10px;color:var(--stone);letter-spacing:0.05em;line-height:1.6}
+.card-monogram-small{text-align:right}
+.letterhead-mockup{width:100%;aspect-ratio:8.5/11;background:var(--ivory);padding:48px 60px;display:flex;flex-direction:column;color:var(--night)}
+.letter-header{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:32px;border-bottom:0.5px solid rgba(13,10,6,0.15);margin-bottom:32px}
+.letter-body-line{height:6px;background:rgba(13,10,6,0.07);border-radius:2px;margin-bottom:10px}
+.letter-body-line.short{width:60%}
+.letter-body-line.med{width:82%}
+#back-cover{min-height:100vh;background:var(--gold);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:80px 60px;text-align:center;position:relative}
+.side-nav{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;z-index:100}
+.nav-dot{width:6px;height:6px;border-radius:50%;background:rgba(201,168,76,0.2);cursor:pointer;transition:all 0.3s ease;border:0.5px solid rgba(201,168,76,0.4)}
+.nav-dot:hover,.nav-dot.active{background:var(--gold);transform:scale(1.5)}
+.band{padding:48px 80px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.band-line{flex:1;height:0.5px;background:rgba(201,168,76,0.2)}
+@media(max-width:900px){.page-split{grid-template-columns:1fr}.content-block{padding:60px 40px}.logo-grid{grid-template-columns:1fr}.pillar-grid{grid-template-columns:1fr}.do-dont-grid{grid-template-columns:1fr}.photo-rule-grid{grid-template-columns:1fr}.palette-grid{grid-template-columns:repeat(3,1fr)}.type-row{grid-template-columns:1fr}.band{padding:32px 40px}}
+</style>
+</head>
+<body>
+<nav class="side-nav" aria-label="Section navigation">
+  <div class="nav-dot active" onclick="scrollToSection(0)" title="Cover"></div>
+  <div class="nav-dot" onclick="scrollToSection(1)" title="Brand Story"></div>
+  <div class="nav-dot" onclick="scrollToSection(2)" title="The Name"></div>
+  <div class="nav-dot" onclick="scrollToSection(3)" title="Logo"></div>
+  <div class="nav-dot" onclick="scrollToSection(4)" title="Color"></div>
+  <div class="nav-dot" onclick="scrollToSection(5)" title="Typography"></div>
+  <div class="nav-dot" onclick="scrollToSection(6)" title="Voice"></div>
+  <div class="nav-dot" onclick="scrollToSection(7)" title="Photography"></div>
+  <div class="nav-dot" onclick="scrollToSection(8)" title="Applications"></div>
+  <div class="nav-dot" onclick="scrollToSection(9)" title="Rules"></div>
+  <div class="nav-dot" onclick="scrollToSection(10)" title="Back Cover"></div>
+</nav>
+<section id="cover" data-section="0">
+  <div class="cover-border"></div>
+  <div class="cover-corner tl"></div>
+  <div class="cover-corner tr"></div>
+  <div class="cover-corner bl"></div>
+  <div class="cover-corner br"></div>
+  <div class="atlas-glow"></div>
+  <div class="monogram-svg">
+    <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Villa Leonessa VL monogram">
+      <circle cx="60" cy="60" r="56" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
+      <circle cx="60" cy="60" r="50" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.15"/>
+      <path d="M30 40 L40 48 L50 36 L60 52 L70 36 L80 48 L90 40" fill="none" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+      <text x="60" y="84" font-family="Cinzel,serif" font-size="34" font-weight="400" fill="#C9A84C" text-anchor="middle" letter-spacing="4">VL</text>
+      <circle cx="38" cy="40" r="1.5" fill="#C9A84C" opacity="0.5"/>
+      <circle cx="82" cy="40" r="1.5" fill="#C9A84C" opacity="0.5"/>
+    </svg>
+  </div>
+  <p class="cover-title">Villa Leonessa</p>
+  <p class="cover-sub">Bab Atlas · Marrakech</p>
+  <div class="cover-rule"></div>
+  <p class="cover-tagline">Brand Identity Guidelines</p>
+  <p style="font-family:var(--display);font-size:13px;font-style:italic;color:rgba(138,127,114,0.6);margin-top:40px;letter-spacing:0.05em">Prince Federico Pignatelli della Leonessa</p>
+  <p style="font-family:var(--title);font-size:9px;letter-spacing:0.4em;color:rgba(201,168,76,0.3);margin-top:8px;text-transform:uppercase">Est. MMXXV</p>
+</section>
+<section id="story" class="page-split" data-section="1">
+  <div class="content-block bg-night" style="border-right:0.5px solid rgba(201,168,76,0.15)">
+    <p class="section-num">01 — Brand Story</p>
+    <h2 class="section-title-lg">Where<br><em class="gold">Ancient<br>Nobility</em><br>Meets the<br>Eternal City</h2>
+    <div class="ornament"><span>Heritage</span></div>
+    <p class="section-body">The Pignatelli della Leonessa lineage traces an unbroken thread through more than eleven centuries of European history — from the courts of medieval Italy to the studios of Manhattan, the salons of Beverly Hills, and now, to the sun-baked grandeur of Marrakech. Villa Leonessa is not simply a residence. It is the material expression of a dynasty in motion.</p>
+    <p class="section-body">Prince Federico Pignatelli della Leonessa — architect, photographer, financier, and visionary — has spent a lifetime creating spaces where art, culture, and nobility converge. Villa Leonessa is his most personal statement: a home that carries his family name into the ancient red city, at the foot of the Atlas Mountains.</p>
+  </div>
+  <div class="content-block" style="background:rgba(201,168,76,0.04);position:relative;overflow:hidden">
+    <div class="zellige-pattern"></div>
+    <div class="quote-block">
+      <p class="quote-text">"Every great house tells a story. Villa Leonessa tells one that began in 900 AD."</p>
+      <p class="quote-attr">Brand Foundation Statement</p>
+    </div>
+    <div style="margin-top:48px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+        <div>
+          <p class="cinzel" style="font-size:10px;color:var(--gold);opacity:0.6;margin-bottom:6px">Heritage Founded</p>
+          <p style="font-family:var(--display);font-size:36px;color:var(--ivory)">900 AD</p>
+          <p style="font-family:var(--body);font-size:12px;color:var(--stone)">Pignatelli della Leonessa<br>family origins, Italy</p>
+        </div>
+        <div>
+          <p class="cinzel" style="font-size:10px;color:var(--gold);opacity:0.6;margin-bottom:6px">Location</p>
+          <p style="font-family:var(--display);font-size:36px;color:var(--ivory)">Bab Atlas</p>
+          <p style="font-family:var(--body);font-size:12px;color:var(--stone)">La Palmeraie, Marrakech<br>facing the Atlas Mountains</p>
+        </div>
+        <div>
+          <p class="cinzel" style="font-size:10px;color:var(--gold);opacity:0.6;margin-bottom:6px">Papal Connection</p>
+          <p style="font-family:var(--display);font-size:22px;color:var(--ivory);font-style:italic">Pope Innocenzo XII</p>
+          <p style="font-family:var(--body);font-size:12px;color:var(--stone)">Direct ancestral lineage</p>
+        </div>
+        <div>
+          <p class="cinzel" style="font-size:10px;color:var(--gold);opacity:0.6;margin-bottom:6px">Prince Federico's World</p>
+          <p style="font-family:var(--display);font-size:22px;color:var(--ivory);font-style:italic">New York · Milan · Beverly Hills</p>
+          <p style="font-family:var(--body);font-size:12px;color:var(--stone)">Pier59 Studios · Art & Fashion Group</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="band bg-mid">
+  <div class="band-line"></div>
+  <p class="cinzel" style="font-size:10px;color:var(--gold);opacity:0.5;white-space:nowrap">Villa Leonessa · Bab Atlas · Marrakech</p>
+  <div class="band-line"></div>
+</div>
+<section id="name" class="page-full" data-section="2" style="background:var(--night);position:relative;overflow:hidden">
+  <svg style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.03" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <pattern id="zellige" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+      <rect width="80" height="80" fill="none"/>
+      <path d="M0 40 L40 0 L80 40 L40 80 Z" fill="none" stroke="#C9A84C" stroke-width="0.5"/>
+      <path d="M20 20 L60 20 L60 60 L20 60 Z" fill="none" stroke="#C9A84C" stroke-width="0.5"/>
+      <circle cx="40" cy="40" r="8" fill="none" stroke="#C9A84C" stroke-width="0.5"/>
+    </pattern>
+    <rect width="800" height="600" fill="url(#zellige)"/>
+  </svg>
+  <div style="max-width:760px;position:relative;z-index:1">
+    <p class="section-num">02 — The Name</p>
+    <p style="font-family:var(--display);font-size:clamp(80px,14vw,160px);line-height:0.9;color:var(--gold);font-weight:300;margin-bottom:0;letter-spacing:-2px">Leonessa</p>
+    <p style="font-family:var(--display);font-size:clamp(16px,2vw,24px);font-style:italic;color:var(--stone);margin-bottom:40px;letter-spacing:0.05em">Feminine form of <em style="color:var(--ivory)">Leone</em> — Italian for Lion</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:48px 0;text-align:left">
+      <div style="padding:32px;background:rgba(201,168,76,0.04);border:0.5px solid rgba(201,168,76,0.12)">
+        <p class="cinzel" style="font-size:10px;color:var(--gold);margin-bottom:12px;opacity:0.7">Italian</p>
+        <p style="font-family:var(--display);font-size:28px;color:var(--ivory);margin-bottom:8px">La Leonessa</p>
+        <p class="section-body" style="font-size:13px;max-width:none">The Lioness. Regal, fierce, maternal. In Italian heraldry, the lion represents nobility, courage, and sovereignty. The feminine form carries additional grace and power.</p>
+      </div>
+      <div style="padding:32px;background:rgba(201,168,76,0.04);border:0.5px solid rgba(201,168,76,0.12)">
+        <p class="cinzel" style="font-size:10px;color:var(--gold);margin-bottom:12px;opacity:0.7">Heraldic</p>
+        <p style="font-family:var(--display);font-size:28px;color:var(--ivory);margin-bottom:8px">della Leonessa</p>
+        <p class="section-body" style="font-size:13px;max-width:none">The family surname in full. The house of Pignatelli della Leonessa has carried the lion in its coat of arms since the Middle Ages — a direct bloodline to the Papal throne.</p>
+      </div>
+      <div style="padding:32px;background:rgba(201,168,76,0.04);border:0.5px solid rgba(201,168,76,0.12)">
+        <p class="cinzel" style="font-size:10px;color:var(--gold);margin-bottom:12px;opacity:0.7">In Marrakech</p>
+        <p style="font-family:var(--display);font-size:28px;color:var(--ivory);margin-bottom:8px">Villa Leonessa</p>
+        <p class="section-body" style="font-size:13px;max-width:none">The name plants a dynasty in Moroccan soil. It speaks Italian, breathes Moorish air, and stands at the convergence of two civilisations that share a love of beauty, light, and stone.</p>
+      </div>
+    </div>
+    <p class="section-body" style="max-width:620px;margin:0 auto;text-align:center;font-size:15px">The brand name is the family name. It carries eleven centuries of weight. Every application of the Villa Leonessa mark must honour this gravity — never casual, never diminished.</p>
+  </div>
+</section>
+<section id="back-cover" data-section="10">
+  <p class="cover-tagline" style="color:rgba(13,10,6,0.5)">Brand Identity Guidelines</p>
+  <p class="cover-title" style="color:var(--night)">Villa Leonessa</p>
+  <p class="cover-sub" style="color:rgba(13,10,6,0.6)">Bab Atlas · Marrakech</p>
+  <p style="font-family:var(--display);font-size:11px;color:rgba(13,10,6,0.4);margin-top:24px;letter-spacing:0.2em;text-transform:uppercase">© MMXXV</p>
+</section>
+<script>
+function scrollToSection(index){
+  const sections=document.querySelectorAll('section[data-section]');
+  if(sections[index]){sections[index].scrollIntoView({behavior:'smooth'});}
+  document.querySelectorAll('.nav-dot').forEach((dot,i)=>{
+    dot.classList.toggle('active',i===index);
+  });
+}
+window.addEventListener('scroll',()=>{
+  const sections=document.querySelectorAll('section[data-section]');
+  const scrollPos=window.scrollY+window.innerHeight/2;
+  sections.forEach((section,i)=>{
+    const top=section.offsetTop;
+    const bottom=top+section.offsetHeight;
+    if(scrollPos>=top&&scrollPos<bottom){
+      document.querySelectorAll('.nav-dot').forEach((dot,j)=>{
+        dot.classList.toggle('active',j===i);
+      });
+    }
+  });
+});
+</script>
+</body>
+</html>
