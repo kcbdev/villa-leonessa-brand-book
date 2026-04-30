@@ -29,6 +29,8 @@
 }
 html{scroll-behavior:smooth}
 body{background:var(--night);color:var(--ivory);font-family:var(--body);font-weight:300;line-height:1.7;overflow-x:hidden}
+
+/* ===== TYPOGRAPHY ===== */
 h1,h2,h3,h4{font-family:var(--display);font-weight:400;line-height:1.15}
 .cinzel{font-family:var(--title);letter-spacing:0.15em;text-transform:uppercase}
 .italic{font-style:italic}
@@ -37,9 +39,13 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:400;line-height:1.15}
 .ivory{color:var(--ivory)}
 .stone{color:var(--stone)}
 .small-caps{font-variant:small-caps;letter-spacing:0.1em}
+
+/* ===== ORNAMENT LINES ===== */
 .ornament{display:flex;align-items:center;gap:1.5rem;margin:2rem 0}
 .ornament::before,.ornament::after{content:'';flex:1;height:0.5px;background:var(--gold);opacity:0.4}
 .ornament span{font-family:var(--title);font-size:11px;letter-spacing:0.3em;color:var(--gold);white-space:nowrap}
+
+/* ===== SECTIONS ===== */
 section{position:relative;overflow:hidden}
 .page-full{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:80px 60px;text-align:center}
 .page-split{display:grid;grid-template-columns:1fr 1fr;min-height:100vh}
@@ -50,38 +56,95 @@ section{position:relative;overflow:hidden}
 .bg-terra{background:var(--terra)}
 .bg-gold{background:var(--gold)}
 .bg-zellige{background:var(--zellige)}
+
+/* ===== DECORATIVE BORDERS ===== */
 .border-gold{border:0.5px solid rgba(201,168,76,0.3)}
 .border-gold-full{border:1px solid var(--gold)}
-#cover{min-height:100vh;background:var(--night);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:80px 60px;position:relative}
-.cover-border{position:absolute;top:30px;left:30px;right:30px;bottom:30px;border:0.5px solid rgba(201,168,76,0.35);pointer-events:none}
-.cover-border::before{content:'';position:absolute;top:8px;left:8px;right:8px;bottom:8px;border:0.5px solid rgba(201,168,76,0.15)}
+
+/* ===== COVER ===== */
+#cover{
+  min-height:100vh;
+  background:var(--night);
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  padding:80px 60px;
+  position:relative;
+}
+.cover-border{
+  position:absolute;
+  top:30px;left:30px;right:30px;bottom:30px;
+  border:0.5px solid rgba(201,168,76,0.35);
+  pointer-events:none;
+}
+.cover-border::before{
+  content:'';
+  position:absolute;
+  top:8px;left:8px;right:8px;bottom:8px;
+  border:0.5px solid rgba(201,168,76,0.15);
+}
 .cover-corner{position:absolute;width:24px;height:24px}
 .cover-corner.tl{top:22px;left:22px;border-top:1px solid var(--gold);border-left:1px solid var(--gold)}
 .cover-corner.tr{top:22px;right:22px;border-top:1px solid var(--gold);border-right:1px solid var(--gold)}
 .cover-corner.bl{bottom:22px;left:22px;border-bottom:1px solid var(--gold);border-left:1px solid var(--gold)}
 .cover-corner.br{bottom:22px;right:22px;border-bottom:1px solid var(--gold);border-right:1px solid var(--gold)}
+
 .monogram-svg{margin-bottom:40px}
 .cover-title{font-family:var(--title);font-size:clamp(42px,6vw,80px);letter-spacing:0.25em;color:var(--ivory);text-transform:uppercase;margin-bottom:6px;font-weight:400}
 .cover-sub{font-family:var(--title);font-size:clamp(12px,1.5vw,16px);letter-spacing:0.5em;color:var(--gold);text-transform:uppercase;margin-bottom:48px;font-weight:400}
 .cover-location{font-family:var(--display);font-size:clamp(14px,1.5vw,18px);font-style:italic;color:var(--stone);letter-spacing:0.05em}
 .cover-rule{width:80px;height:0.5px;background:var(--gold);margin:20px auto}
 .cover-tagline{font-family:var(--display);font-size:clamp(11px,1.2vw,14px);letter-spacing:0.35em;color:rgba(201,168,76,0.6);text-transform:uppercase}
+
+/* ===== SECTION LABELS ===== */
 .section-num{font-family:var(--title);font-size:10px;letter-spacing:0.5em;color:var(--gold);opacity:0.6;margin-bottom:16px}
 .section-title-xl{font-size:clamp(52px,7vw,96px);line-height:1.05;margin-bottom:24px}
 .section-title-lg{font-size:clamp(36px,5vw,64px);line-height:1.1;margin-bottom:20px}
 .section-title-md{font-size:clamp(28px,3.5vw,48px);line-height:1.15;margin-bottom:16px}
 .section-body{font-size:clamp(14px,1.3vw,16px);line-height:1.8;color:var(--stone);max-width:580px;margin-bottom:24px;font-weight:300}
-.zellige-pattern{position:absolute;right:-120px;top:50%;transform:translateY(-50%);width:380px;height:380px;opacity:0.06;background-image:linear-gradient(45deg,var(--gold) 25%,transparent 25%),linear-gradient(-45deg,var(--gold) 25%,transparent 25%),linear-gradient(45deg,transparent 75%,var(--gold) 75%),linear-gradient(-45deg,transparent 75%,var(--gold) 75%);background-size:40px 40px;background-position:0 0,0 20px,20px -20px,-20px 0}
-.atlas-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(ellipse at center,rgba(201,168,76,0.04) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
-.quote-block{border-left:2px solid var(--gold);padding:24px 40px;margin:40px 0;background:rgba(201,168,76,0.04)}
+
+/* ===== GEOMETRIC PATTERNS ===== */
+.zellige-pattern{
+  position:absolute;right:-120px;top:50%;transform:translateY(-50%);
+  width:380px;height:380px;opacity:0.06;
+  background-image:
+    linear-gradient(45deg,var(--gold) 25%,transparent 25%),
+    linear-gradient(-45deg,var(--gold) 25%,transparent 25%),
+    linear-gradient(45deg,transparent 75%,var(--gold) 75%),
+    linear-gradient(-45deg,transparent 75%,var(--gold) 75%);
+  background-size:40px 40px;
+  background-position:0 0,0 20px,20px -20px,-20px 0;
+}
+.atlas-glow{
+  position:absolute;
+  width:600px;height:600px;
+  border-radius:50%;
+  background:radial-gradient(ellipse at center,rgba(201,168,76,0.04) 0%,transparent 70%);
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  pointer-events:none;
+}
+
+/* ===== QUOTE BLOCK ===== */
+.quote-block{
+  border-left:2px solid var(--gold);
+  padding:24px 40px;
+  margin:40px 0;
+  background:rgba(201,168,76,0.04);
+}
 .quote-text{font-family:var(--display);font-size:clamp(22px,3vw,38px);line-height:1.4;font-style:italic;color:var(--ivory-dark);margin-bottom:16px}
 .quote-attr{font-family:var(--title);font-size:11px;letter-spacing:0.35em;color:var(--gold)}
+
+/* ===== COLOR PALETTE ===== */
 .palette-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0;margin:48px 0}
 .swatch{aspect-ratio:1;position:relative;overflow:hidden;cursor:default}
-.swatch-inner{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:16px}
+.swatch-inner{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  justify-content:flex-end;padding:16px;
+}
 .swatch-name{font-family:var(--title);font-size:10px;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:4px;font-weight:400}
 .swatch-hex{font-family:'Courier New',monospace;font-size:12px;opacity:0.7}
 .swatch-label{font-family:var(--display);font-size:11px;font-style:italic;opacity:0.6;margin-top:2px}
+
+/* ===== TYPOGRAPHY SHOWCASE ===== */
 .type-row{padding:32px 0;border-bottom:0.5px solid rgba(201,168,76,0.15);display:grid;grid-template-columns:140px 1fr;gap:40px;align-items:start}
 .type-label{padding-top:8px}
 .type-role{font-family:var(--title);font-size:10px;letter-spacing:0.35em;color:var(--gold);display:block;margin-bottom:4px}
@@ -91,20 +154,40 @@ section{position:relative;overflow:hidden}
 .type-sample-cinzel{font-family:var(--title);font-size:18px;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase}
 .type-sample-body{font-family:var(--body);font-size:16px;line-height:1.75;font-weight:300;color:var(--stone);max-width:480px}
 .type-sample-caption{font-family:var(--body);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone)}
+
+/* ===== LOGO SECTION ===== */
 .logo-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:48px 0}
-.logo-cell{padding:60px 40px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px}
+.logo-cell{
+  padding:60px 40px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:24px;
+}
 .logo-cell-dark{background:#0D0A06}
 .logo-cell-light{background:var(--ivory)}
 .logo-cell-gold{background:var(--gold)}
 .logo-cell-terra{background:var(--terra)}
 .logo-label{font-family:var(--title);font-size:10px;letter-spacing:0.4em;color:var(--stone);text-transform:uppercase;margin-top:8px}
-.app-card{border:0.5px solid rgba(201,168,76,0.2);background:rgba(201,168,76,0.02);padding:48px;margin-bottom:32px;position:relative}
-.app-card::before{content:'';position:absolute;top:0;left:0;width:40px;height:2px;background:var(--gold)}
+
+/* ===== APPLICATIONS ===== */
+.app-card{
+  border:0.5px solid rgba(201,168,76,0.2);
+  background:rgba(201,168,76,0.02);
+  padding:48px;
+  margin-bottom:32px;
+  position:relative;
+}
+.app-card::before{
+  content:'';position:absolute;top:0;left:0;width:40px;height:2px;background:var(--gold);
+}
+
+/* ===== VOICE PILLARS ===== */
 .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:48px 0}
 .pillar{padding:40px 32px;background:rgba(201,168,76,0.03);border:0.5px solid rgba(201,168,76,0.12)}
 .pillar-icon{font-family:var(--display);font-size:48px;font-style:italic;color:var(--gold);opacity:0.4;margin-bottom:16px;line-height:1}
 .pillar-title{font-family:var(--title);font-size:12px;letter-spacing:0.3em;color:var(--gold);margin-bottom:12px;text-transform:uppercase}
 .pillar-body{font-family:var(--body);font-size:13px;line-height:1.7;color:var(--stone);font-weight:300}
+
+/* ===== PHOTOGRAPHY ===== */
 .photo-rule-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin:48px 0}
 .photo-rule{padding:32px;border-top:2px solid var(--gold)}
 .photo-rule.do{border-top-color:var(--sage)}
@@ -114,6 +197,8 @@ section{position:relative;overflow:hidden}
 .photo-rule.dont .photo-rule-badge{color:var(--terra)}
 .photo-rule-title{font-family:var(--display);font-size:22px;color:var(--ivory);margin-bottom:8px}
 .photo-rule-body{font-family:var(--body);font-size:13px;color:var(--stone);line-height:1.7;font-weight:300}
+
+/* ===== DON'TS ===== */
 .do-dont-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:48px 0}
 .do-block,.dont-block{padding:40px}
 .do-block{background:rgba(122,140,110,0.06);border-top:2px solid var(--sage)}
@@ -125,27 +210,76 @@ section{position:relative;overflow:hidden}
 .rule-list li::before{position:absolute;left:0;top:8px}
 .do-block .rule-list li::before{content:'✓';color:var(--sage);font-size:11px}
 .dont-block .rule-list li::before{content:'×';color:var(--terra);font-size:13px}
-.card-mockup{width:340px;height:200px;position:relative;background:var(--night);border:0.5px solid rgba(201,168,76,0.4);padding:28px 32px;display:flex;flex-direction:column;justify-content:space-between}
+
+/* ===== STATIONERY MOCKUPS ===== */
+.card-mockup{
+  width:340px;height:200px;position:relative;
+  background:var(--night);
+  border:0.5px solid rgba(201,168,76,0.4);
+  padding:28px 32px;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
 .card-mockup::before{content:'';position:absolute;top:8px;left:8px;right:8px;bottom:8px;border:0.5px solid rgba(201,168,76,0.12);pointer-events:none}
 .card-name{font-family:var(--title);font-size:13px;letter-spacing:0.25em;color:var(--ivory)}
 .card-title-small{font-family:var(--display);font-size:12px;font-style:italic;color:var(--gold);margin-top:2px}
 .card-info{font-family:var(--body);font-size:10px;color:var(--stone);letter-spacing:0.05em;line-height:1.6}
 .card-monogram-small{text-align:right}
-.letterhead-mockup{width:100%;aspect-ratio:8.5/11;background:var(--ivory);padding:48px 60px;display:flex;flex-direction:column;color:var(--night)}
+
+.letterhead-mockup{
+  width:100%;aspect-ratio:8.5/11;
+  background:var(--ivory);
+  padding:48px 60px;
+  display:flex;flex-direction:column;
+  color:var(--night);
+}
 .letter-header{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:32px;border-bottom:0.5px solid rgba(13,10,6,0.15);margin-bottom:32px}
 .letter-body-line{height:6px;background:rgba(13,10,6,0.07);border-radius:2px;margin-bottom:10px}
 .letter-body-line.short{width:60%}
 .letter-body-line.med{width:82%}
-#back-cover{min-height:100vh;background:var(--gold);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:80px 60px;text-align:center;position:relative}
-.side-nav{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;z-index:100}
-.nav-dot{width:6px;height:6px;border-radius:50%;background:rgba(201,168,76,0.2);cursor:pointer;transition:all 0.3s ease;border:0.5px solid rgba(201,168,76,0.4)}
+
+/* ===== BACK COVER ===== */
+#back-cover{
+  min-height:100vh;
+  background:var(--gold);
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  padding:80px 60px;text-align:center;
+  position:relative;
+}
+
+/* ===== NAV ===== */
+.side-nav{
+  position:fixed;right:24px;top:50%;transform:translateY(-50%);
+  display:flex;flex-direction:column;gap:8px;z-index:100;
+}
+.nav-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:rgba(201,168,76,0.2);cursor:pointer;
+  transition:all 0.3s ease;border:0.5px solid rgba(201,168,76,0.4);
+}
 .nav-dot:hover,.nav-dot.active{background:var(--gold);transform:scale(1.5)}
+
+/* ===== DIVIDER BAND ===== */
 .band{padding:48px 80px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .band-line{flex:1;height:0.5px;background:rgba(201,168,76,0.2)}
-@media(max-width:900px){.page-split{grid-template-columns:1fr}.content-block{padding:60px 40px}.logo-grid{grid-template-columns:1fr}.pillar-grid{grid-template-columns:1fr}.do-dont-grid{grid-template-columns:1fr}.photo-rule-grid{grid-template-columns:1fr}.palette-grid{grid-template-columns:repeat(3,1fr)}.type-row{grid-template-columns:1fr}.band{padding:32px 40px}}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .page-split{grid-template-columns:1fr}
+  .content-block{padding:60px 40px}
+  .logo-grid{grid-template-columns:1fr}
+  .pillar-grid{grid-template-columns:1fr}
+  .do-dont-grid{grid-template-columns:1fr}
+  .photo-rule-grid{grid-template-columns:1fr}
+  .palette-grid{grid-template-columns:repeat(3,1fr)}
+  .type-row{grid-template-columns:1fr}
+  .band{padding:32px 40px}
+}
 </style>
 </head>
 <body>
+
+<!-- NAV DOTS -->
 <nav class="side-nav" aria-label="Section navigation">
   <div class="nav-dot active" onclick="scrollToSection(0)" title="Cover"></div>
   <div class="nav-dot" onclick="scrollToSection(1)" title="Brand Story"></div>
@@ -159,6 +293,10 @@ section{position:relative;overflow:hidden}
   <div class="nav-dot" onclick="scrollToSection(9)" title="Rules"></div>
   <div class="nav-dot" onclick="scrollToSection(10)" title="Back Cover"></div>
 </nav>
+
+<!-- ═══════════════════════════════════════════════
+     COVER
+════════════════════════════════════════════════ -->
 <section id="cover" data-section="0">
   <div class="cover-border"></div>
   <div class="cover-corner tl"></div>
@@ -166,16 +304,23 @@ section{position:relative;overflow:hidden}
   <div class="cover-corner bl"></div>
   <div class="cover-corner br"></div>
   <div class="atlas-glow"></div>
+
+  <!-- Monogram -->
   <div class="monogram-svg">
     <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Villa Leonessa VL monogram">
+      <!-- Outer circle -->
       <circle cx="60" cy="60" r="56" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
       <circle cx="60" cy="60" r="50" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.15"/>
+      <!-- Crown points -->
       <path d="M30 40 L40 48 L50 36 L60 52 L70 36 L80 48 L90 40" fill="none" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+      <!-- VL letters -->
       <text x="60" y="84" font-family="Cinzel,serif" font-size="34" font-weight="400" fill="#C9A84C" text-anchor="middle" letter-spacing="4">VL</text>
+      <!-- Small decorative dots -->
       <circle cx="38" cy="40" r="1.5" fill="#C9A84C" opacity="0.5"/>
       <circle cx="82" cy="40" r="1.5" fill="#C9A84C" opacity="0.5"/>
     </svg>
   </div>
+
   <p class="cover-title">Villa Leonessa</p>
   <p class="cover-sub">Bab Atlas · Marrakech</p>
   <div class="cover-rule"></div>
@@ -183,20 +328,35 @@ section{position:relative;overflow:hidden}
   <p style="font-family:var(--display);font-size:13px;font-style:italic;color:rgba(138,127,114,0.6);margin-top:40px;letter-spacing:0.05em">Prince Federico Pignatelli della Leonessa</p>
   <p style="font-family:var(--title);font-size:9px;letter-spacing:0.4em;color:rgba(201,168,76,0.3);margin-top:8px;text-transform:uppercase">Est. MMXXV</p>
 </section>
+
+<!-- ═══════════════════════════════════════════════
+     01 · BRAND STORY
+════════════════════════════════════════════════ -->
 <section id="story" class="page-split" data-section="1">
+  <!-- Left dark panel -->
   <div class="content-block bg-night" style="border-right:0.5px solid rgba(201,168,76,0.15)">
     <p class="section-num">01 — Brand Story</p>
     <h2 class="section-title-lg">Where<br><em class="gold">Ancient<br>Nobility</em><br>Meets the<br>Eternal City</h2>
+
     <div class="ornament"><span>Heritage</span></div>
-    <p class="section-body">The Pignatelli della Leonessa lineage traces an unbroken thread through more than eleven centuries of European history — from the courts of medieval Italy to the studios of Manhattan, the salons of Beverly Hills, and now, to the sun-baked grandeur of Marrakech. Villa Leonessa is not simply a residence. It is the material expression of a dynasty in motion.</p>
-    <p class="section-body">Prince Federico Pignatelli della Leonessa — architect, photographer, financier, and visionary — has spent a lifetime creating spaces where art, culture, and nobility converge. Villa Leonessa is his most personal statement: a home that carries his family name into the ancient red city, at the foot of the Atlas Mountains.</p>
+
+    <p class="section-body">
+      The Pignatelli della Leonessa lineage traces an unbroken thread through more than eleven centuries of European history — from the courts of medieval Italy to the studios of Manhattan, the salons of Beverly Hills, and now, to the sun-baked grandeur of Marrakech. Villa Leonessa is not simply a residence. It is the material expression of a dynasty in motion.
+    </p>
+    <p class="section-body">
+      Prince Federico Pignatelli della Leonessa — architect, photographer, financier, and visionary — has spent a lifetime creating spaces where art, culture, and nobility converge. Villa Leonessa is his most personal statement: a home that carries his family name into the ancient red city, at the foot of the Atlas Mountains.
+    </p>
   </div>
+
+  <!-- Right gold panel -->
   <div class="content-block" style="background:rgba(201,168,76,0.04);position:relative;overflow:hidden">
     <div class="zellige-pattern"></div>
+
     <div class="quote-block">
       <p class="quote-text">"Every great house tells a story. Villa Leonessa tells one that began in 900 AD."</p>
       <p class="quote-attr">Brand Foundation Statement</p>
     </div>
+
     <div style="margin-top:48px">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
         <div>
@@ -223,12 +383,19 @@ section{position:relative;overflow:hidden}
     </div>
   </div>
 </section>
+
+<!-- Band divider -->
 <div class="band bg-mid">
   <div class="band-line"></div>
   <p class="cinzel" style="font-size:10px;color:var(--gold);opacity:0.5;white-space:nowrap">Villa Leonessa · Bab Atlas · Marrakech</p>
   <div class="band-line"></div>
 </div>
+
+<!-- ═══════════════════════════════════════════════
+     02 · THE NAME
+════════════════════════════════════════════════ -->
 <section id="name" class="page-full" data-section="2" style="background:var(--night);position:relative;overflow:hidden">
+  <!-- Background geometric zellige -->
   <svg style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.03" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
     <pattern id="zellige" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
       <rect width="80" height="80" fill="none"/>
@@ -238,10 +405,13 @@ section{position:relative;overflow:hidden}
     </pattern>
     <rect width="800" height="600" fill="url(#zellige)"/>
   </svg>
+
   <div style="max-width:760px;position:relative;z-index:1">
     <p class="section-num">02 — The Name</p>
+
     <p style="font-family:var(--display);font-size:clamp(80px,14vw,160px);line-height:0.9;color:var(--gold);font-weight:300;margin-bottom:0;letter-spacing:-2px">Leonessa</p>
     <p style="font-family:var(--display);font-size:clamp(16px,2vw,24px);font-style:italic;color:var(--stone);margin-bottom:40px;letter-spacing:0.05em">Feminine form of <em style="color:var(--ivory)">Leone</em> — Italian for Lion</p>
+
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:48px 0;text-align:left">
       <div style="padding:32px;background:rgba(201,168,76,0.04);border:0.5px solid rgba(201,168,76,0.12)">
         <p class="cinzel" style="font-size:10px;color:var(--gold);margin-bottom:12px;opacity:0.7">Italian</p>
@@ -259,36 +429,649 @@ section{position:relative;overflow:hidden}
         <p class="section-body" style="font-size:13px;max-width:none">The name plants a dynasty in Moroccan soil. It speaks Italian, breathes Moorish air, and stands at the convergence of two civilisations that share a love of beauty, light, and stone.</p>
       </div>
     </div>
-    <p class="section-body" style="max-width:620px;margin:0 auto;text-align:center;font-size:15px">The brand name is the family name. It carries eleven centuries of weight. Every application of the Villa Leonessa mark must honour this gravity — never casual, never diminished.</p>
+
+    <p class="section-body" style="max-width:620px;margin:0 auto;text-align:center;font-size:15px">
+      The brand name is the family name. It carries eleven centuries of weight. Every application of the Villa Leonessa mark must honour this gravity — never casual, never diminished.
+    </p>
   </div>
 </section>
-<section id="back-cover" data-section="10">
-  <p class="cover-tagline" style="color:rgba(13,10,6,0.5)">Brand Identity Guidelines</p>
-  <p class="cover-title" style="color:var(--night)">Villa Leonessa</p>
-  <p class="cover-sub" style="color:rgba(13,10,6,0.6)">Bab Atlas · Marrakech</p>
-  <p style="font-family:var(--display);font-size:11px;color:rgba(13,10,6,0.4);margin-top:24px;letter-spacing:0.2em;text-transform:uppercase">© MMXXV</p>
+
+<!-- ═══════════════════════════════════════════════
+     03 · LOGO SYSTEM
+════════════════════════════════════════════════ -->
+<section id="logo" data-section="3" style="background:var(--mid)">
+  <div class="content-block" style="max-width:1100px;margin:0 auto;width:100%;padding:80px 70px">
+    <p class="section-num">03 — Logo System</p>
+    <h2 class="section-title-lg" style="max-width:500px">The Mark<br>of <em class="gold">Leonessa</em></h2>
+    <p class="section-body">The Villa Leonessa identity is built on two primary marks: the Crowned Monogram (VL) and the Full Wordmark. Each is a complete system, deployable independently or together.</p>
+  </div>
+
+  <!-- Logo variations -->
+  <div class="logo-grid" style="margin:0">
+
+    <!-- Dark version (primary) -->
+    <div class="logo-cell logo-cell-dark" style="border:0.5px solid rgba(201,168,76,0.15)">
+      <svg width="160" height="180" viewBox="0 0 160 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Villa Leonessa primary dark logo">
+        <circle cx="80" cy="72" r="64" fill="none" stroke="#C9A84C" stroke-width="0.6" opacity="0.35"/>
+        <circle cx="80" cy="72" r="56" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.15"/>
+        <path d="M42 50 L54 60 L66 44 L80 64 L94 44 L106 60 L118 50" fill="none" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.75"/>
+        <text x="80" y="98" font-family="Cinzel,serif" font-size="42" font-weight="400" fill="#C9A84C" text-anchor="middle" letter-spacing="5">VL</text>
+        <line x1="24" y1="120" x2="136" y2="120" stroke="#C9A84C" stroke-width="0.5" opacity="0.35"/>
+        <text x="80" y="140" font-family="Cinzel,serif" font-size="9" fill="#F5EFE0" text-anchor="middle" letter-spacing="6" font-weight="400">VILLA LEONESSA</text>
+        <text x="80" y="156" font-family="Cinzel,serif" font-size="7" fill="#8A7F72" text-anchor="middle" letter-spacing="4">BAB ATLAS · MARRAKECH</text>
+      </svg>
+      <p class="logo-label" style="color:var(--stone)">Primary — Dark Background</p>
+    </div>
+
+    <!-- Light version -->
+    <div class="logo-cell logo-cell-light">
+      <svg width="160" height="180" viewBox="0 0 160 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Villa Leonessa light version logo">
+        <circle cx="80" cy="72" r="64" fill="none" stroke="#8A7F72" stroke-width="0.6" opacity="0.35"/>
+        <circle cx="80" cy="72" r="56" fill="none" stroke="#8A7F72" stroke-width="0.5" opacity="0.15"/>
+        <path d="M42 50 L54 60 L66 44 L80 64 L94 44 L106 60 L118 50" fill="none" stroke="#0D0A06" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+        <text x="80" y="98" font-family="Cinzel,serif" font-size="42" font-weight="400" fill="#0D0A06" text-anchor="middle" letter-spacing="5">VL</text>
+        <line x1="24" y1="120" x2="136" y2="120" stroke="#0D0A06" stroke-width="0.5" opacity="0.25"/>
+        <text x="80" y="140" font-family="Cinzel,serif" font-size="9" fill="#0D0A06" text-anchor="middle" letter-spacing="6" font-weight="400">VILLA LEONESSA</text>
+        <text x="80" y="156" font-family="Cinzel,serif" font-size="7" fill="#8A7F72" text-anchor="middle" letter-spacing="4">BAB ATLAS · MARRAKECH</text>
+      </svg>
+      <p class="logo-label" style="color:var(--stone)">Reversed — Light Background</p>
+    </div>
+
+    <!-- Gold version -->
+    <div class="logo-cell logo-cell-gold">
+      <svg width="160" height="180" viewBox="0 0 160 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Villa Leonessa gold version logo">
+        <circle cx="80" cy="72" r="64" fill="none" stroke="#0D0A06" stroke-width="0.6" opacity="0.25"/>
+        <circle cx="80" cy="72" r="56" fill="none" stroke="#0D0A06" stroke-width="0.5" opacity="0.1"/>
+        <path d="M42 50 L54 60 L66 44 L80 64 L94 44 L106 60 L118 50" fill="none" stroke="#0D0A06" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+        <text x="80" y="98" font-family="Cinzel,serif" font-size="42" font-weight="400" fill="#0D0A06" text-anchor="middle" letter-spacing="5">VL</text>
+        <line x1="24" y1="120" x2="136" y2="120" stroke="#0D0A06" stroke-width="0.5" opacity="0.2"/>
+        <text x="80" y="140" font-family="Cinzel,serif" font-size="9" fill="#0D0A06" text-anchor="middle" letter-spacing="6" font-weight="400">VILLA LEONESSA</text>
+        <text x="80" y="156" font-family="Cinzel,serif" font-size="7" fill="rgba(13,10,6,0.5)" text-anchor="middle" letter-spacing="4">BAB ATLAS · MARRAKECH</text>
+      </svg>
+      <p class="logo-label" style="color:rgba(13,10,6,0.5)">Gold Background — Special Use</p>
+    </div>
+
+    <!-- Monogram only -->
+    <div class="logo-cell logo-cell-dark" style="border:0.5px solid rgba(201,168,76,0.15)">
+      <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Villa Leonessa VL monogram alone">
+        <circle cx="50" cy="50" r="46" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/>
+        <path d="M22 32 L32 41 L42 28 L50 44 L58 28 L68 41 L78 32" fill="none" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+        <text x="50" y="72" font-family="Cinzel,serif" font-size="30" font-weight="400" fill="#C9A84C" text-anchor="middle" letter-spacing="4">VL</text>
+      </svg>
+      <p class="logo-label" style="color:var(--stone)">Monogram — Standalone Mark</p>
+    </div>
+  </div>
+
+  <!-- Clear space & usage rules -->
+  <div class="content-block" style="max-width:1100px;margin:0 auto;width:100%;padding:60px 70px">
+    <h3 style="font-family:var(--display);font-size:28px;color:var(--ivory);margin-bottom:32px">Usage Rules</h3>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px">
+      <div class="app-card">
+        <p class="cinzel" style="font-size:10px;color:var(--gold);margin-bottom:12px">Clear Space</p>
+        <p class="section-body" style="font-size:13px;max-width:none">Always maintain a minimum clear space equal to the height of the "V" in the monogram on all sides. No other marks, text, or imagery may enter this zone.</p>
+      </div>
+      <div class="app-card">
+        <p class="cinzel" style="font-size:10px;color:var(--gold);margin-bottom:12px">Minimum Size</p>
+        <p class="section-body" style="font-size:13px;max-width:none">Full lockup: minimum 80px wide in digital, 25mm in print. Monogram alone: minimum 40px / 12mm. Below these sizes, the mark loses its refinement.</p>
+      </div>
+      <div class="app-card">
+        <p class="cinzel" style="font-size:10px;color:var(--gold);margin-bottom:12px">Proportions</p>
+        <p class="section-body" style="font-size:13px;max-width:none">Never stretch, compress, rotate, or alter the proportional relationship between the monogram, rule, and wordmark. Use only authorised files.</p>
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- ═══════════════════════════════════════════════
+     04 · COLOUR PALETTE
+════════════════════════════════════════════════ -->
+<section id="colors" data-section="4" style="background:var(--night)">
+  <div class="content-block" style="max-width:1100px;margin:0 auto;width:100%;padding:80px 70px">
+    <p class="section-num">04 — Colour Palette</p>
+    <h2 class="section-title-lg" style="max-width:520px">Colours of<br><em class="gold">Two Worlds</em></h2>
+    <p class="section-body" style="max-width:620px">The palette is drawn from two civilisations — Italian ochre palaces and Moroccan earthen walls, Roman gold and Atlas stone, Medina terracotta and Mediterranean ivory. Together they form a chromatic world that belongs fully to neither and surpasses both.</p>
+  </div>
+
+  <!-- Primary Palette -->
+  <div style="padding:0 70px">
+    <p class="cinzel" style="font-size:10px;color:var(--gold);opacity:0.6;margin-bottom:24px;letter-spacing:0.4em">Primary Palette</p>
+  </div>
+  <div class="palette-grid" style="padding:0 70px;grid-template-columns:repeat(5,1fr);gap:2px">
+    <div class="swatch" style="background:#0D0A06;aspect-ratio:auto;height:220px">
+      <div class="swatch-inner">
+        <p class="swatch-name" style="color:#C9A84C">Leonessa Night</p>
+        <p class="swatch-hex" style="color:#8A7F72">#0D0A06</p>
+        <p class="swatch-label" style="color:#8A7F72">Primary Dark</p>
+      </div>
+    </div>
+    <div class="swatch" style="background:#C9A84C;aspect-ratio:auto;height:220px">
+      <div class="swatch-inner">
+        <p class="swatch-name" style="color:#0D0A06">Atlas Gold</p>
+        <p class="swatch-hex" style="color:rgba(13,10,6,0.6)">#C9A84C</p>
+        <p class="swatch-label" style="color:rgba(13,10,6,0.5)">Primary Gold</p>
+      </div>
+    </div>
+    <div class="swatch" style="background:#F5EFE0;aspect-ratio:auto;height:220px">
+      <div class="swatch-inner">
+        <p class="swatch-name" style="color:#0D0A06">Ivory Parchment</p>
+        <p class="swatch-hex" style="color:#8A7F72">#F5EFE0</p>
+        <p class="swatch-label" style="color:#8A7F72">Primary Light</p>
+      </div>
+    </div>
+    <div class="swatch" style="background:#C4543A;aspect-ratio:auto;height:220px">
+      <div class="swatch-inner">
+        <p class="swatch-name" style="color:#F5EFE0">Marrakech Rose</p>
+        <p class="swatch-hex" style="color:rgba(245,239,224,0.6)">#C4543A</p>
+        <p class="swatch-label" style="color:rgba(245,239,224,0.5)">Terracotta Accent</p>
+      </div>
+    </div>
+    <div class="swatch" style="background:#8A7F72;aspect-ratio:auto;height:220px">
+      <div class="swatch-inner">
+        <p class="swatch-name" style="color:#F5EFE0">Atlas Stone</p>
+        <p class="swatch-hex" style="color:rgba(245,239,224,0.6)">#8A7F72</p>
+        <p class="swatch-label" style="color:rgba(245,239,224,0.5)">Neutral Mid</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Secondary Palette -->
+  <div style="padding:48px 70px 0">
+    <p class="cinzel" style="font-size:10px;color:var(--gold);opacity:0.6;margin-bottom:24px;letter-spacing:0.4em">Secondary Palette</p>
+  </div>
+  <div style="padding:0 70px;display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:80px">
+    <div class="swatch" style="background:#2C241A;height:140px">
+      <div class="swatch-inner">
+        <p class="swatch-name" style="color:#C9A84C">Leonessa Dusk</p>
+        <p class="swatch-hex" style="color:#8A7F72">#2C241A</p>
+      </div>
+    </div>
+    <div class="swatch" style="background:#E8D49A;height:140px">
+      <div class="swatch-inner">
+        <p class="swatch-name" style="color:#0D0A06">Pale Gold</p>
+        <p class="swatch-hex" style="color:rgba(13,10,6,0.5)">#E8D49A</p>
+      </div>
+    </div>
+    <div class="swatch" style="background:#3B6B84;height:140px">
+      <div class="swatch-inner">
+        <p class="swatch-name" style="color:#F5EFE0">Zellige Blue</p>
+        <p class="swatch-hex" style="color:rgba(245,239,224,0.6)">#3B6B84</p>
+      </div>
+    </div>
+    <div class="swatch" style="background:#7A8C6E;height:140px">
+      <div class="swatch-inner">
+        <p class="swatch-name" style="color:#F5EFE0">Majorelle Sage</p>
+        <p class="swatch-hex" style="color:rgba(245,239,224,0.6)">#7A8C6E</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Colour Usage Notes -->
+  <div style="padding:0 70px 80px;display:grid;grid-template-columns:1fr 1fr;gap:32px">
+    <div class="app-card">
+      <p class="cinzel" style="font-size:10px;color:var(--gold);margin-bottom:16px">Dominant Combination</p>
+      <div style="display:flex;gap:8px;margin-bottom:16px">
+        <div style="width:40px;height:40px;background:#0D0A06;border:0.5px solid rgba(201,168,76,0.3)"></div>
+        <div style="width:40px;height:40px;background:#C9A84C"></div>
+        <div style="width:40px;height:40px;background:#F5EFE0"></div>
+      </div>
+      <p style="font-family:var(--body);font-size:13px;color:var(--stone);line-height:1.7">Leonessa Night + Atlas Gold + Ivory Parchment forms the primary expression of the brand in all premium communications.</p>
+    </div>
+    <div class="app-card">
+      <p class="cinzel" style="font-size:10px;color:var(--gold);margin-bottom:16px">Accent Usage</p>
+      <div style="display:flex;gap:8px;margin-bottom:16px">
+        <div style="width:40px;height:40px;background:#C4543A"></div>
+        <div style="width:40px;height:40px;background:#3B6B84"></div>
+        <div style="width:40px;height:40px;background:#7A8C6E"></div>
+      </div>
+      <p style="font-family:var(--body);font-size:13px;color:var(--stone);line-height:1.7">Marrakech Rose, Zellige Blue, and Majorelle Sage are used sparingly as accent details — never as dominant backgrounds. Their strength is in restraint.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     05 · TYPOGRAPHY
+════════════════════════════════════════════════ -->
+<section id="typography" data-section="5" style="background:var(--mid)">
+  <div class="content-block" style="max-width:1100px;margin:0 auto;width:100%;padding:80px 70px">
+    <p class="section-num">05 — Typography</p>
+    <h2 class="section-title-lg" style="max-width:520px">A Voice in<br><em class="gold">Two Scripts</em></h2>
+    <p class="section-body" style="max-width:560px">The type system channels Italian classical letterforms through a contemporary lens. Cormorant Garamond carries the weight of Renaissance manuscripts. Cinzel echoes Roman inscriptions in stone. Jost provides the modern infrastructure beneath both.</p>
+
+    <div style="margin-top:64px">
+      <!-- Type Row 1: Display -->
+      <div class="type-row">
+        <div class="type-label">
+          <span class="type-role">Display · Hero</span>
+          <span class="type-spec">Cormorant Garamond<br>300 · Italic<br>80–120px</span>
+        </div>
+        <div>
+          <p class="type-sample-xl" style="font-style:italic">Villa<br>Leonessa</p>
+        </div>
+      </div>
+
+      <!-- Type Row 2: Heading -->
+      <div class="type-row">
+        <div class="type-label">
+          <span class="type-role">Heading · Section</span>
+          <span class="type-spec">Cormorant Garamond<br>400<br>36–64px</span>
+        </div>
+        <div>
+          <p class="type-sample-lg">Where Nobility Meets<br><em style="color:var(--gold)">the Red City</em></p>
+        </div>
+      </div>
+
+      <!-- Type Row 3: Title/Label -->
+      <div class="type-row">
+        <div class="type-label">
+          <span class="type-role">Title · Label</span>
+          <span class="type-spec">Cinzel<br>400–500<br>10–18px</span>
+        </div>
+        <div>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <p class="type-sample-cinzel" style="font-size:18px">Villa Leonessa · Est. MMXXV</p>
+            <p class="type-sample-cinzel" style="font-size:13px">Bab Atlas · Marrakech · Morocco</p>
+            <p class="type-sample-cinzel" style="font-size:10px">Prince Federico Pignatelli della Leonessa</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Type Row 4: Body -->
+      <div class="type-row">
+        <div class="type-label">
+          <span class="type-role">Body · Editorial</span>
+          <span class="type-spec">Jost<br>300<br>14–16px</span>
+        </div>
+        <div>
+          <p class="type-sample-body">Villa Leonessa stands at the convergence of two great civilisations — the ancient Italian nobility that shaped Europe for a millennium, and the golden city of Marrakech that has enchanted the world for centuries. Here, in the shade of the Atlas Mountains, the Pignatelli della Leonessa name finds its newest home.</p>
+        </div>
+      </div>
+
+      <!-- Type Row 5: Caption -->
+      <div class="type-row" style="border-bottom:none">
+        <div class="type-label">
+          <span class="type-role">Caption · Utility</span>
+          <span class="type-spec">Jost<br>400<br>10–12px · Tracked</span>
+        </div>
+        <div>
+          <p class="type-sample-caption">Photography by Prince Federico Pignatelli della Leonessa · Villa Leonessa · 2025</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     06 · BRAND VOICE
+════════════════════════════════════════════════ -->
+<section id="voice" data-section="6" style="background:var(--night)">
+  <div class="content-block" style="max-width:1100px;margin:0 auto;width:100%;padding:80px 70px">
+    <p class="section-num">06 — Brand Voice</p>
+    <h2 class="section-title-lg" style="max-width:520px">Speaking with<br><em class="gold">Authority<br>&amp; Grace</em></h2>
+    <p class="section-body" style="max-width:580px">Villa Leonessa does not seek attention. It commands it. The brand voice is the voice of someone who has never needed to prove their station — assured, eloquent, generous in knowledge, restrained in volume.</p>
+
+    <div class="pillar-grid" style="margin-top:48px">
+      <div class="pillar">
+        <p class="pillar-icon">I</p>
+        <p class="pillar-title">Aristocratic</p>
+        <p class="pillar-body">Language is precise, unhurried, and beautifully structured. We use the full weight of the English and Italian vocabulary. We never explain what the educated already know; we illuminate what they may have forgotten.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-icon">II</p>
+        <p class="pillar-title">Sensorial</p>
+        <p class="pillar-body">We describe what light does to stone at dusk. What jasmine smells like through an open window in the Palmeraie. What silence sounds like when the Atlas Mountains are watching. We write for the senses first.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-icon">III</p>
+        <p class="pillar-title">Timeless</p>
+        <p class="pillar-body">Villa Leonessa speaks in the present tense of a long history. We avoid trends, seasonal language, and urgency. There is no "limited time." There is only now and forever. Our tone is generational, not transactional.</p>
+      </div>
+    </div>
+
+    <!-- Tone matrix -->
+    <div style="margin-top:48px;border:0.5px solid rgba(201,168,76,0.15);padding:40px">
+      <p class="cinzel" style="font-size:10px;color:var(--gold);margin-bottom:24px;letter-spacing:0.4em">Tone Matrix</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+        <div style="padding:24px;border-right:0.5px solid rgba(201,168,76,0.15);border-bottom:0.5px solid rgba(201,168,76,0.15)">
+          <p style="font-family:var(--display);font-size:22px;color:var(--gold);margin-bottom:8px">Assured</p>
+          <p style="font-family:var(--body);font-size:12px;color:var(--stone)">Not arrogant. Confidence that has no need to declare itself.</p>
+        </div>
+        <div style="padding:24px;border-bottom:0.5px solid rgba(201,168,76,0.15)">
+          <p style="font-family:var(--display);font-size:22px;color:var(--gold);margin-bottom:8px">Poetic</p>
+          <p style="font-family:var(--body);font-size:12px;color:var(--stone)">Not florid. Language that opens a window rather than describing the view.</p>
+        </div>
+        <div style="padding:24px;border-right:0.5px solid rgba(201,168,76,0.15)">
+          <p style="font-family:var(--display);font-size:22px;color:var(--gold);margin-bottom:8px">Intimate</p>
+          <p style="font-family:var(--body);font-size:12px;color:var(--stone)">Not familiar. We address our guest as a peer, not a customer.</p>
+        </div>
+        <div style="padding:24px">
+          <p style="font-family:var(--display);font-size:22px;color:var(--gold);margin-bottom:8px">Restrained</p>
+          <p style="font-family:var(--body);font-size:12px;color:var(--stone)">Not cold. Elegance is knowing what to omit. We say more with less.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sample copy -->
+    <div style="margin-top:48px">
+      <p class="cinzel" style="font-size:10px;color:var(--gold);opacity:0.6;margin-bottom:24px;letter-spacing:0.4em">Brand Copy Examples</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+        <div class="app-card">
+          <p class="cinzel" style="font-size:9px;color:var(--sage);margin-bottom:12px">✓ On-Brand</p>
+          <p style="font-family:var(--display);font-size:18px;font-style:italic;color:var(--ivory);line-height:1.5">"Villa Leonessa does not open its gates to the world. It opens them to those who already belong."</p>
+        </div>
+        <div class="app-card">
+          <p class="cinzel" style="font-size:9px;color:var(--terra);margin-bottom:12px">× Off-Brand</p>
+          <p style="font-family:var(--body);font-size:14px;color:var(--stone);line-height:1.6;font-style:italic">"Luxury villa available for rent in Marrakech — book now and enjoy exclusive amenities!"</p>
+        </div>
+        <div class="app-card">
+          <p class="cinzel" style="font-size:9px;color:var(--sage);margin-bottom:12px">✓ On-Brand</p>
+          <p style="font-family:var(--display);font-size:18px;font-style:italic;color:var(--ivory);line-height:1.5">"Eleven centuries of Italian nobility, resting now in the shadow of the Atlas."</p>
+        </div>
+        <div class="app-card">
+          <p class="cinzel" style="font-size:9px;color:var(--terra);margin-bottom:12px">× Off-Brand</p>
+          <p style="font-family:var(--body);font-size:14px;color:var(--stone);line-height:1.6;font-style:italic">"Amazing 5-star experience in Marrakech! Perfect for families and couples alike!"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     07 · PHOTOGRAPHY DIRECTION
+════════════════════════════════════════════════ -->
+<section id="photography" data-section="7" style="background:var(--mid)">
+  <div class="content-block" style="max-width:1100px;margin:0 auto;width:100%;padding:80px 70px">
+    <p class="section-num">07 — Photography Direction</p>
+    <h2 class="section-title-lg" style="max-width:480px">The Art of<br><em class="gold">Seeing</em></h2>
+    <p class="section-body" style="max-width:580px">Prince Federico is himself a master photographer — founder of Pier59 Studios, New York's premier photography complex. Villa Leonessa's visual language reflects this expertise. Every image must function as a photograph first and a marketing asset second.</p>
+
+    <!-- Visual Grammar Swatches (simulated with colored panels) -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin:48px 0">
+      <div style="height:200px;background:linear-gradient(to bottom,#1A1208,#2C1A0A);position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;display:flex;align-items:flex-end;padding:16px">
+          <p style="font-family:var(--display);font-size:13px;font-style:italic;color:rgba(245,239,224,0.7)">Golden hour light on terracotta</p>
+        </div>
+        <div style="position:absolute;top:16px;right:16px;width:30px;height:30px;border-radius:50%;background:#C9A84C;opacity:0.4"></div>
+        <div style="position:absolute;bottom:40px;left:0;right:0;height:60px;background:linear-gradient(to bottom,transparent,rgba(196,84,58,0.2))"></div>
+      </div>
+      <div style="height:200px;background:#2A3A35;position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;display:flex;align-items:flex-end;padding:16px">
+          <p style="font-family:var(--display);font-size:13px;font-style:italic;color:rgba(245,239,224,0.7)">Still water reflections</p>
+        </div>
+        <div style="position:absolute;top:0;left:0;right:0;height:80px;background:linear-gradient(to bottom,rgba(59,107,132,0.3),transparent)"></div>
+      </div>
+      <div style="height:200px;background:#1E180E;position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;display:flex;align-items:flex-end;padding:16px">
+          <p style="font-family:var(--display);font-size:13px;font-style:italic;color:rgba(245,239,224,0.7)">Shadow geometry on zellige</p>
+        </div>
+        <div style="position:absolute;top:20px;left:20px;width:60px;height:60px;border:0.5px solid rgba(201,168,76,0.3);transform:rotate(45deg)"></div>
+        <div style="position:absolute;top:40px;left:40px;width:60px;height:60px;border:0.5px solid rgba(201,168,76,0.2);transform:rotate(45deg)"></div>
+      </div>
+      <div style="height:200px;background:#3A2A1A;position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;display:flex;align-items:flex-end;padding:16px">
+          <p style="font-family:var(--display);font-size:13px;font-style:italic;color:rgba(245,239,224,0.7)">Atlas mountains at blue hour</p>
+        </div>
+        <div style="position:absolute;top:30px;left:0;right:0;height:3px;background:linear-gradient(to right,transparent,rgba(122,140,110,0.4),transparent)"></div>
+      </div>
+    </div>
+
+    <div class="photo-rule-grid">
+      <div class="photo-rule do">
+        <p class="photo-rule-badge">Do — Light</p>
+        <p class="photo-rule-title">Shoot in golden hour and blue hour only</p>
+        <p class="photo-rule-body">The ochre walls of Marrakech and the Atlas gold of the brand speak only in warm and twilight light. Midday sun flattens the world. Magic lives at the margins of day.</p>
+      </div>
+      <div class="photo-rule dont">
+        <p class="photo-rule-badge">Avoid — Light</p>
+        <p class="photo-rule-title">No harsh midday, no flash, no HDR</p>
+        <p class="photo-rule-body">Overexposed whites, synthetic sharpness, and HDR hyper-reality destroy the atmospheric depth that defines Villa Leonessa's visual world.</p>
+      </div>
+      <div class="photo-rule do">
+        <p class="photo-rule-badge">Do — Subject</p>
+        <p class="photo-rule-title">Detail, texture, the forgotten corner</p>
+        <p class="photo-rule-body">The edge of a zellige tile. The grain of carved cedar. A single jasmine on a stone ledge. Meaning lives in the particular. Prince Federico's photographic eye sees what others walk past.</p>
+      </div>
+      <div class="photo-rule dont">
+        <p class="photo-rule-badge">Avoid — Subject</p>
+        <p class="photo-rule-title">No posed lifestyle, no stock-photography aesthetics</p>
+        <p class="photo-rule-body">Staged "luxury lifestyle" imagery with models and props. Photographed people should be incidental and natural — never styled advertisements.</p>
+      </div>
+      <div class="photo-rule do">
+        <p class="photo-rule-badge">Do — Post-production</p>
+        <p class="photo-rule-title">Warm tones, rich shadows, grain</p>
+        <p class="photo-rule-body">Colour grade toward warmth: lifted shadows, slight orange in midtones, a whisper of film grain. The image should look like a memory, not a specification sheet.</p>
+      </div>
+      <div class="photo-rule dont">
+        <p class="photo-rule-badge">Avoid — Post-production</p>
+        <p class="photo-rule-title">No cool digital correction, no overexposed whites</p>
+        <p class="photo-rule-body">Desaturated "clean" edits, bright white balance corrections, and flat tonal range remove the soul that Marrakech light provides naturally.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     08 · BRAND APPLICATIONS
+════════════════════════════════════════════════ -->
+<section id="applications" data-section="8" style="background:var(--night)">
+  <div class="content-block" style="max-width:1100px;margin:0 auto;width:100%;padding:80px 70px">
+    <p class="section-num">08 — Brand Applications</p>
+    <h2 class="section-title-lg" style="max-width:480px">The Mark<br>in the <em class="gold">World</em></h2>
+
+    <!-- Business Card Mockup -->
+    <div style="margin:48px 0">
+      <p class="cinzel" style="font-size:10px;color:var(--gold);opacity:0.6;margin-bottom:32px;letter-spacing:0.4em">Business Card</p>
+      <div style="display:flex;gap:24px;flex-wrap:wrap">
+        <!-- Front -->
+        <div class="card-mockup">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <p style="font-family:var(--title);font-size:9px;letter-spacing:0.4em;color:var(--gold);opacity:0.6;margin-bottom:4px">VILLA</p>
+              <p style="font-family:var(--title);font-size:14px;letter-spacing:0.3em;color:var(--gold)">LEONESSA</p>
+            </div>
+            <svg width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="18" cy="18" r="16" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/>
+              <path d="M8 11 L11 14 L14 10 L18 16 L22 10 L25 14 L28 11" fill="none" stroke="#C9A84C" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+              <text x="18" y="26" font-family="Cinzel,serif" font-size="10" font-weight="400" fill="#C9A84C" text-anchor="middle" letter-spacing="2">VL</text>
+            </svg>
+          </div>
+          <div>
+            <p style="font-family:var(--title);font-size:9px;letter-spacing:0.3em;color:var(--ivory)">BAB ATLAS · MARRAKECH</p>
+          </div>
+        </div>
+        <!-- Back -->
+        <div class="card-mockup" style="background:var(--ivory)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <p class="card-name" style="color:var(--night)">Prince Federico Pignatelli</p>
+              <p class="card-title-small" style="color:#8A7F72">della Leonessa</p>
+            </div>
+          </div>
+          <div class="card-info" style="color:#8A7F72">
+            <p>villa-leonessa.com</p>
+            <p>Bab Atlas, La Palmeraie</p>
+            <p>Marrakech, Kingdom of Morocco</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Letterhead Mockup -->
+    <div style="margin:64px 0">
+      <p class="cinzel" style="font-size:10px;color:var(--gold);opacity:0.6;margin-bottom:32px;letter-spacing:0.4em">Letterhead</p>
+      <div style="max-width:480px">
+        <div class="letterhead-mockup">
+          <div class="letter-header">
+            <div>
+              <p style="font-family:'Cinzel',serif;font-size:14px;letter-spacing:0.25em;color:#0D0A06">VILLA LEONESSA</p>
+              <p style="font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:#8A7F72;letter-spacing:0.1em">Bab Atlas · La Palmeraie · Marrakech</p>
+            </div>
+            <svg width="40" height="44" viewBox="0 0 40 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="20" cy="18" r="16" fill="none" stroke="#8A7F72" stroke-width="0.5" opacity="0.35"/>
+              <path d="M8 10 L12 14 L16 8 L20 16 L24 8 L28 14 L32 10" fill="none" stroke="#0D0A06" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+              <text x="20" y="24" font-family="Cinzel,serif" font-size="9" fill="#0D0A06" text-anchor="middle" letter-spacing="2">VL</text>
+              <line x1="0" y1="38" x2="40" y2="38" stroke="#0D0A06" stroke-width="0.4" opacity="0.2"/>
+              <text x="20" y="44" font-family="Cinzel,serif" font-size="5" fill="#8A7F72" text-anchor="middle" letter-spacing="2">VILLA LEONESSA</text>
+            </svg>
+          </div>
+          <div class="letter-body-line"></div>
+          <div class="letter-body-line med"></div>
+          <div class="letter-body-line"></div>
+          <div class="letter-body-line short"></div>
+          <div class="letter-body-line med" style="margin-top:20px"></div>
+          <div class="letter-body-line"></div>
+          <div class="letter-body-line med"></div>
+          <div style="margin-top:auto;border-top:0.5px solid rgba(13,10,6,0.12);padding-top:12px">
+            <p style="font-family:'Cinzel',serif;font-size:7px;color:#8A7F72;letter-spacing:0.2em">VILLA LEONESSA · BAB ATLAS · MARRAKECH · KINGDOM OF MOROCCO</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wax Seal & Stamp -->
+    <div style="margin:64px 0">
+      <p class="cinzel" style="font-size:10px;color:var(--gold);opacity:0.6;margin-bottom:32px;letter-spacing:0.4em">Wax Seal &amp; Emboss</p>
+      <div style="display:flex;gap:40px;align-items:center;flex-wrap:wrap">
+        <div style="text-align:center">
+          <svg width="90" height="90" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wax seal with VL monogram">
+            <circle cx="45" cy="45" r="42" fill="#C4543A" opacity="0.9"/>
+            <circle cx="45" cy="45" r="36" fill="none" stroke="#F5EFE0" stroke-width="0.5" opacity="0.4"/>
+            <path d="M22 30 L29 36 L36 26 L45 38 L54 26 L61 36 L68 30" fill="none" stroke="#F5EFE0" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+            <text x="45" y="62" font-family="Cinzel,serif" font-size="22" font-weight="400" fill="#F5EFE0" text-anchor="middle" letter-spacing="3">VL</text>
+          </svg>
+          <p style="font-family:var(--body);font-size:11px;color:var(--stone);margin-top:8px">Wax Seal — Marrakech Rose</p>
+        </div>
+        <div style="text-align:center">
+          <svg width="90" height="90" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Embossed seal VL">
+            <circle cx="45" cy="45" r="42" fill="none" stroke="#C9A84C" stroke-width="1"/>
+            <circle cx="45" cy="45" r="36" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
+            <path d="M22 30 L29 36 L36 26 L45 38 L54 26 L61 36 L68 30" fill="none" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+            <text x="45" y="62" font-family="Cinzel,serif" font-size="22" font-weight="400" fill="#C9A84C" text-anchor="middle" letter-spacing="3">VL</text>
+          </svg>
+          <p style="font-family:var(--body);font-size:11px;color:var(--stone);margin-top:8px">Emboss — Atlas Gold</p>
+        </div>
+        <div style="max-width:320px">
+          <p class="section-body" style="font-size:13px;max-width:none">The wax seal in Marrakech Rose is used on formal correspondence and gift packaging. The embossed gold mark appears on stationery, amenity kits, and certificate documents. Never print the seal flat — it must be dimensional: wax or emboss only.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Digital Applications -->
+    <div style="margin:64px 0">
+      <p class="cinzel" style="font-size:10px;color:var(--gold);opacity:0.6;margin-bottom:32px;letter-spacing:0.4em">Digital Presence</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px">
+        <div style="padding:32px;background:rgba(201,168,76,0.03);border:0.5px solid rgba(201,168,76,0.12)">
+          <p class="cinzel" style="font-size:10px;color:var(--gold);margin-bottom:12px">Website</p>
+          <p class="section-body" style="font-size:13px;max-width:none">villa-leonessa.com — single-page, immersive scroll. Full-bleed photography. Minimal navigation. No booking widget on the homepage. Enquiries by introduction only.</p>
+        </div>
+        <div style="padding:32px;background:rgba(201,168,76,0.03);border:0.5px solid rgba(201,168,76,0.12)">
+          <p class="cinzel" style="font-size:10px;color:var(--gold);margin-bottom:12px">Instagram</p>
+          <p class="section-body" style="font-size:13px;max-width:none">@villaleonessa — curated grid of 3-column editorial photography. Atlas Gold filter profile. No price mentions. No hashtag campaigns. Captions in English and Italian alternating.</p>
+        </div>
+        <div style="padding:32px;background:rgba(201,168,76,0.03);border:0.5px solid rgba(201,168,76,0.12)">
+          <p class="cinzel" style="font-size:10px;color:var(--gold);margin-bottom:12px">Email</p>
+          <p class="section-body" style="font-size:13px;max-width:none">Dark background, gold monogram header, Cormorant Garamond body text. No promotional formatting. Reads as personal correspondence, not newsletter. Maximum one email per fortnight.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     09 · BRAND RULES (DO'S & DON'TS)
+════════════════════════════════════════════════ -->
+<section id="rules" data-section="9" style="background:var(--mid)">
+  <div class="content-block" style="max-width:1100px;margin:0 auto;width:100%;padding:80px 70px">
+    <p class="section-num">09 — Brand Rules</p>
+    <h2 class="section-title-lg" style="max-width:480px">Protecting the<br><em class="gold">Integrity</em></h2>
+    <p class="section-body" style="max-width:560px">A noble mark is only as powerful as its consistency. These rules are non-negotiable. Deviation from them is not a stylistic choice — it is a breach of the brand covenant.</p>
+
+    <div class="do-dont-grid">
+      <div class="do-block">
+        <p class="do-label">Always Do</p>
+        <ul class="rule-list">
+          <li>Use only approved logo files from the brand asset library</li>
+          <li>Maintain the minimum clear space around all marks</li>
+          <li>Use Cormorant Garamond for all editorial and display copy</li>
+          <li>Use Cinzel exclusively for titles, labels, and identifiers</li>
+          <li>Use the full name "Villa Leonessa" in first reference — never "the villa"</li>
+          <li>Refer to the owner as "Prince Federico Pignatelli della Leonessa" in full on first use</li>
+          <li>Shoot photography in warm, natural light — golden hour preferred</li>
+          <li>Apply Atlas Gold as the dominant accent in all compositions</li>
+          <li>Write in a voice that is assured, poetic, and timeless</li>
+          <li>Use the wax seal as a physical, dimensional element only</li>
+          <li>Maintain the primary palette of Night, Gold, and Ivory</li>
+          <li>Ground all brand communications in heritage, place, and story</li>
+        </ul>
+      </div>
+      <div class="dont-block">
+        <p class="dont-label">Never Do</p>
+        <ul class="rule-list">
+          <li>Stretch, skew, rotate, or distort the logo in any way</li>
+          <li>Place the logo on busy, patterned, or low-contrast backgrounds</li>
+          <li>Use the monogram in a colour other than Gold, Ivory, Night, or Terracotta</li>
+          <li>Substitute non-brand typefaces (Arial, Helvetica, sans-serif defaults)</li>
+          <li>Write in an urgent, promotional, or sales-driven tone</li>
+          <li>Use exclamation marks, emoji, or casualisms in brand communications</li>
+          <li>Describe the property as a "rental", "hotel", or "accommodation"</li>
+          <li>Use stock photography or AI-generated imagery</li>
+          <li>List or advertise on mass platforms without brand approval</li>
+          <li>Apply neon, primary, or cool-toned colours to any brand element</li>
+          <li>Use lowercase "villa leonessa" — always capitalised</li>
+          <li>Abbreviate the Prince's name or title without written consent</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     BACK COVER
+════════════════════════════════════════════════ -->
+<section id="back-cover" data-section="10">
+  <div class="cover-border" style="border-color:rgba(13,10,6,0.25)"></div>
+  <div class="cover-corner tl" style="border-color:#0D0A06;opacity:0.4"></div>
+  <div class="cover-corner tr" style="border-color:#0D0A06;opacity:0.4"></div>
+  <div class="cover-corner bl" style="border-color:#0D0A06;opacity:0.4"></div>
+  <div class="cover-corner br" style="border-color:#0D0A06;opacity:0.4"></div>
+
+  <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Villa Leonessa closing monogram" style="margin-bottom:32px;opacity:0.4">
+    <circle cx="40" cy="40" r="36" fill="none" stroke="#0D0A06" stroke-width="0.5"/>
+    <path d="M16 26 L22 32 L28 22 L40 38 L52 22 L58 32 L64 26" fill="none" stroke="#0D0A06" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="40" y="58" font-family="Cinzel,serif" font-size="22" font-weight="400" fill="#0D0A06" text-anchor="middle" letter-spacing="3">VL</text>
+  </svg>
+
+  <p style="font-family:var(--title);font-size:clamp(28px,5vw,56px);letter-spacing:0.2em;color:#0D0A06;margin-bottom:8px;font-weight:400">VILLA LEONESSA</p>
+  <p style="font-family:var(--title);font-size:11px;letter-spacing:0.5em;color:rgba(13,10,6,0.5);margin-bottom:40px;text-transform:uppercase">Bab Atlas · Marrakech</p>
+
+  <div style="width:60px;height:0.5px;background:rgba(13,10,6,0.3);margin:0 auto 32px"></div>
+
+  <p style="font-family:var(--display);font-size:clamp(18px,2.5vw,28px);font-style:italic;color:#0D0A06;max-width:500px;line-height:1.5;margin-bottom:40px;opacity:0.7">"Nobility does not explain itself.<br>It simply is."</p>
+
+  <p style="font-family:var(--title);font-size:9px;letter-spacing:0.4em;color:rgba(13,10,6,0.4);text-transform:uppercase">Brand Identity Guidelines · Version 1.0 · MMXXV</p>
+  <p style="font-family:var(--body);font-size:11px;color:rgba(13,10,6,0.35);margin-top:8px">Prince Federico Pignatelli della Leonessa · Confidential &amp; Proprietary</p>
+</section>
+
 <script>
-function scrollToSection(index){
-  const sections=document.querySelectorAll('section[data-section]');
-  if(sections[index]){sections[index].scrollIntoView({behavior:'smooth'});}
-  document.querySelectorAll('.nav-dot').forEach((dot,i)=>{
-    dot.classList.toggle('active',i===index);
-  });
+const sections = document.querySelectorAll('[data-section]');
+const dots = document.querySelectorAll('.nav-dot');
+
+function scrollToSection(i){
+  const el = document.querySelector('[data-section="'+i+'"]');
+  if(el) el.scrollIntoView({behavior:'smooth'});
 }
-window.addEventListener('scroll',()=>{
-  const sections=document.querySelectorAll('section[data-section]');
-  const scrollPos=window.scrollY+window.innerHeight/2;
-  sections.forEach((section,i)=>{
-    const top=section.offsetTop;
-    const bottom=top+section.offsetHeight;
-    if(scrollPos>=top&&scrollPos<bottom){
-      document.querySelectorAll('.nav-dot').forEach((dot,j)=>{
-        dot.classList.toggle('active',j===i);
+
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const idx = e.target.dataset.section;
+      dots.forEach((d,i)=>{
+        d.classList.toggle('active', String(i)===String(idx));
       });
     }
   });
-});
+},{threshold:0.4});
+
+sections.forEach(s=>observer.observe(s));
 </script>
 </body>
 </html>
