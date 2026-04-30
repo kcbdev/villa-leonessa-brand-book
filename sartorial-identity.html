@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Villa Leonessa — Sartorial Identity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Cinzel:wght@400;500;600&family=Jost:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* CSS adapted from submitted example styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --night: #0d0a06;
+        --gold: #c9a84c;
+        --gold-light: #e8d49a;
+        --gold-pale: #f5ebd0;
+        --terra: #c4543a;
+        --terra-light: #e8a090;
+        --ivory: #f5efe0;
+        --ivory-dark: #e8e0cc;
+        --stone: #8a7f72;
+        --zellige: #3b6b84;
+        --sage: #7a8c6e;
+        --mid: #2c241a;
+        --display: "Cormorant Garamond", Georgia, serif;
+        --title: "Cinzel", serif;
+        --body: "Jost", "Helvetica Neue", sans-serif;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--night);
+        color: var(--ivory);
+        font-family: var(--body);
+        font-weight: 300;
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--display);
+        font-weight: 400;
+        line-height: 1.15;
+      }
+      .cinzel {
+        font-family: var(--title);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+      .gold {
+        color: var(--gold);
+      }
+      .ornament {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+      .ornament::before,
+      .ornament::after {
+        content: "";
+        flex: 1;
+        height: 0.5px;
+        background: var(--gold);
+        opacity: 0.4;
+      }
+      .ornament span {
+        font-family: var(--title);
+        font-size: 11px;
+        letter-spacing: 0.3em;
+        color: var(--gold);
+        white-space: nowrap;
+      }
+
+      section {
+        position: relative;
+        overflow: hidden;
+      }
+      .page-full {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 60px;
+        text-align: center;
+      }
+      .page-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 100vh;
+      }
+      .content-block {
+        padding: 80px 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .bg-night {
+        background: var(--night);
+      }
+      .bg-mid {
+        background: var(--mid);
+      }
+
+      .cover-border {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        right: 30px;
+        bottom: 30px;
+        border: 0.5px solid rgba(201, 168, 76, 0.35);
+        pointer-events: none;
+      }
+      .cover-corner {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+      }
+      .cover-corner.tl {
+        top: 22px;
+        left: 22px;
+        border-top: 1px solid var(--gold);
+        border-left: 1px solid var(--gold);
+      }
+      .cover-corner.br {
+        bottom: 22px;
+        right: 22px;
+        border-bottom: 1px solid var(--gold);
+        border-right: 1px solid var(--gold);
+      }
+
+      .section-num {
+        font-family: var(--title);
+        font-size: 10px;
+        letter-spacing: 0.5em;
+        color: var(--gold);
+        opacity: 0.6;
+        margin-bottom: 16px;
+      }
+      .section-title-lg {
+        font-size: clamp(36px, 5vw, 64px);
+        line-height: 1.1;
+        margin-bottom: 20px;
+      }
+      .section-body {
+        font-size: clamp(14px, 1.3vw, 16px);
+        line-height: 1.8;
+        color: var(--stone);
+        max-width: 580px;
+        margin-bottom: 24px;
+        font-weight: 300;
+      }
+
+      .quote-block {
+        border-left: 2px solid var(--gold);
+        padding: 24px 40px;
+        margin: 40px 0;
+        background: rgba(201, 168, 76, 0.04);
+      }
+      .quote-text {
+        font-family: var(--display);
+        font-size: clamp(22px, 3vw, 38px);
+        line-height: 1.4;
+        font-style: italic;
+        color: var(--ivory-dark);
+        margin-bottom: 16px;
+      }
+
+      .pillar-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2px;
+        margin: 48px 0;
+      }
+      .pillar {
+        padding: 40px 32px;
+        background: rgba(201, 168, 76, 0.03);
+        border: 0.5px solid rgba(201, 168, 76, 0.12);
+      }
+      .pillar-title {
+        font-family: var(--title);
+        font-size: 12px;
+        letter-spacing: 0.3em;
+        color: var(--gold);
+        margin-bottom: 12px;
+        text-transform: uppercase;
+      }
+
+      .matrix-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 40px;
+        font-family: var(--body);
+      }
+      .matrix-table th {
+        text-align: left;
+        padding: 15px;
+        border-bottom: 1px solid var(--gold);
+        font-family: var(--title);
+        font-size: 10px;
+        color: var(--gold);
+        letter-spacing: 0.2em;
+      }
+      .matrix-table td {
+        padding: 15px;
+        border-bottom: 0.5px solid rgba(201, 168, 76, 0.1);
+        font-size: 13px;
+        color: var(--stone);
+      }
+
+      .image-frame {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 1px solid rgba(201, 168, 76, 0.2);
+      }
+
+      @media (max-width: 900px) {
+        .page-split {
+          grid-template-columns: 1fr;
+        }
+        .pillar-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- COVER -->
+    <section id="cover" class="page-full">
+      <div class="cover-border"></div>
+      <div class="cover-corner tl"></div>
+      <div class="cover-corner br"></div>
+      <p
+        class="cinzel"
+        style="
+          color: var(--gold);
+          font-size: 12px;
+          letter-spacing: 0.5em;
+          margin-bottom: 20px;
+        "
+      >
+        The Sartorial Identity
+      </p>
+      <h1
+        style="
+          font-size: clamp(40px, 8vw, 90px);
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          margin-bottom: 10px;
+        "
+      >
+        Villa Leonessa
+      </h1>
+      <p
+        class="cinzel"
+        style="color: var(--stone); font-size: 14px; letter-spacing: 0.3em"
+      >
+        Bab Atlas · Marrakech
+      </p>
+      <div
+        style="
+          width: 80px;
+          height: 0.5px;
+          background: var(--gold);
+          margin: 40px auto;
+        "
+      ></div>
+      <p
+        style="
+          font-family: var(--display);
+          font-size: 18px;
+          font-style: italic;
+          color: var(--stone);
+        "
+      >
+        A visual catalogue blending Italian nobility with Moroccan heritage.
+      </p>
+    </section>
+
+    <!-- SECTION 01: THE VISION -->
+    <section class="page-split">
+      <div class="content-block bg-night">
+        <p class="section-num">01 — The Vision</p>
+        <h2 class="section-title-lg">Heritage & <em class="gold">Craft</em></h2>
+        <div class="ornament"><span>Design Philosophy</span></div>
+        <p class="section-body">
+          Rooted in the 11-century lineage of Prince Federico, uniforms
+          prioritize structure, bespoke fit, and aristocratic presence. We
+          utilize Milanese silhouettes and fine linen-wool blends to honor
+          Italian noble tailoring.
+        </p>
+        <p class="section-body">
+          Local heritage is expressed through traditional embroidery (Alamari),
+          the integration of the Fez/Tarbouch, and breathable linen fabrics
+          suited for the Marrakech light.
+        </p>
+      </div>
+      <div class="content-block bg-mid">
+        <div class="quote-block">
+          <p class="quote-text">
+            "The material expression of a dynasty in motion."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 02: PILLARS -->
+    <section class="page-full bg-night">
+      <div class="content-block" style="max-width: 1100px">
+        <p class="section-num">02 — Attire Pillars</p>
+        <h2 class="section-title-lg">
+          The <em class="gold">Principles</em> of Dress
+        </h2>
+        <div class="pillar-grid">
+          <div class="pillar">
+            <p class="pillar-title">Aristocratic</p>
+            <p class="section-body" style="font-size: 13px">
+              Every piece of clothing conveys a sense of belonging to an
+              11-century lineage, never loud but always certain[cite: 3].
+            </p>
+          </div>
+          <div class="pillar">
+            <p class="pillar-title">Sensorial</p>
+            <p class="section-body" style="font-size: 13px">
+              Fabrics are chosen for their tactile quality—linen, silk, and
+              velvet—designed to interact with the unique Marrakech light[cite:
+              3].
+            </p>
+          </div>
+          <div class="pillar">
+            <p class="pillar-title">Timeless</p>
+            <p class="section-body" style="font-size: 13px">
+              Avoiding trend-based "luxury," the uniforms focus on silhouettes
+              that could exist in 1920 or 2025[cite: 3].
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 03: DEPARTMENTS -->
+    <section class="bg-mid">
+      <!-- Culinary -->
+      <div
+        class="page-split"
+        style="border-bottom: 0.5px solid rgba(201, 168, 76, 0.2)"
+      >
+        <div class="content-block">
+          <p class="section-num">Culinary Team</p>
+          <h3 class="section-title-lg" style="font-size: 32px">
+            Gastronomic Nobility
+          </h3>
+          <p class="section-body">
+            Our kitchen staff embodies precision. The uniform features
+            high-collar white linen with the gold crowned monogram prominently
+            displayed on the chest[cite: 3]. The assistant wears a complementary
+            design, ensuring a cohesive aesthetic[cite: 3].
+          </p>
+        </div>
+        <div style="padding: 40px">
+          <img
+            src="path_to_chef_image.jpg"
+            alt="Chef and assistant in white linen uniforms"
+            class="image-frame"
+          />
+          <!-- Note: Referencing image with chef and female assistant[cite: 1] -->
+        </div>
+      </div>
+
+      <!-- Security -->
+      <div
+        class="page-split"
+        style="border-bottom: 0.5px solid rgba(201, 168, 76, 0.2)"
+      >
+        <div style="padding: 40px">
+          <img
+            src="path_to_security_image.jpg"
+            alt="Security staff in navy uniform and Fez"
+            class="image-frame"
+          />
+          <!-- Note: Referencing image with security/concierge in navy and Fez[cite: 2] -->
+        </div>
+        <div class="content-block">
+          <p class="section-num">Security & Protection</p>
+          <h3 class="section-title-lg" style="font-size: 32px">
+            Guardians of Leonessa
+          </h3>
+          <p class="section-body">
+            A regal presence at the gates. The security uniform utilizes
+            'Leonessa Night' navy wool with traditional gold-threaded Alamari
+            closures and shoulder braiding[cite: 3]. Completed with a structured
+            velvet Fez[cite: 3].
+          </p>
+        </div>
+      </div>
+
+      <!-- Maintenance -->
+      <div
+        class="page-split"
+        style="border-bottom: 0.5px solid rgba(201, 168, 76, 0.2)"
+      >
+        <div class="content-block">
+          <p class="section-num">Estate Maintenance</p>
+          <h3 class="section-title-lg" style="font-size: 32px">
+            Stewards of the Earth
+          </h3>
+          <p class="section-body">
+            Designed for the golden light of the Palmeraie. Heavy cotton and
+            linen in 'Marrakech Rose' and 'Ivory' tones allow for movement[cite:
+            3]. Refined straw hats with the gold wordmark provide functional
+            protection[cite: 3].
+          </p>
+        </div>
+        <div style="padding: 40px">
+          <img
+            src="path_to_maintenance_image.jpg"
+            alt="Maintenance crew in rose and ivory tones"
+            class="image-frame"
+          />
+          <!-- Note: Referencing image with staff in the garden with straw hats[cite: 1] -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 04: UNIFORM MATRIX -->
+    <section class="page-full bg-night">
+      <div class="content-block" style="width: 100%; max-width: 1100px">
+        <p class="section-num">04 — Technical Specs</p>
+        <h2 class="section-title-lg">Uniform <em class="gold">Matrix</em></h2>
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th>Department</th>
+              <th>Primary Color</th>
+              <th>Primary Material</th>
+              <th>Identity Mark</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Leadership</td>
+              <td>Leonessa Night</td>
+              <td>Wool/Silk Blend</td>
+              <td>Gold Lapel Pin</td>
+            </tr>
+            <tr>
+              <td>Security</td>
+              <td>Leonessa Night</td>
+              <td>Structured Wool</td>
+              <td>Braided Monogram</td>
+            </tr>
+            <tr>
+              <td>Kitchen</td>
+              <td>Ivory Parchment</td>
+              <td>Breathable Linen</td>
+              <td>Chest Embroidery</td>
+            </tr>
+            <tr>
+              <td>Housekeeping</td>
+              <td>Ivory / Zellige Blue</td>
+              <td>Soft Linen</td>
+              <td>Shoulder Embroidery</td>
+            </tr>
+            <tr>
+              <td>Maintenance</td>
+              <td>Marrakech Rose</td>
+              <td>Cotton Twill</td>
+              <td>Leather Patch</td>
+            </tr>
+          </tbody>
+        </table>
+        <p
+          style="
+            font-size: 10px;
+            color: var(--stone);
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+          "
+        >
+          [Source: Brand Sartorial Guidelines - cite: 3]
+        </p>
+      </div>
+    </section>
+
+    <!-- BACK COVER -->
+    <section id="back-cover" class="page-full bg-night">
+      <div
+        class="cover-border"
+        style="border-color: rgba(201, 168, 76, 0.15)"
+      ></div>
+      <p
+        class="cinzel"
+        style="font-size: 40px; letter-spacing: 0.2em; color: var(--gold)"
+      >
+        VL
+      </p>
+      <p
+        class="cinzel"
+        style="
+          font-size: 12px;
+          letter-spacing: 0.5em;
+          color: var(--stone);
+          margin-top: 20px;
+        "
+      >
+        Villa Leonessa · MMXXV
+      </p>
+      <p
+        style="
+          font-family: var(--body);
+          font-size: 11px;
+          color: rgba(245, 239, 224, 0.3);
+          margin-top: 100px;
+        "
+      >
+        Prince Federico Pignatelli della Leonessa · Confidential
+      </p>
+    </section>
+  </body>
+</html>
