@@ -1,0 +1,13 @@
+# Qwen Code settings
+.qwen/
+
+# Editor directories
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
