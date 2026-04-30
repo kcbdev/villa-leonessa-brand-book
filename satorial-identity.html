@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Villa Leonessa — Sartorial Identity</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Jost:wght@200;400&family=Cinzel:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --night: #0d0a06;
+        --gold: #c9a84c;
+        --stone: #8a7f72;
+        --ivory: #f5efe0;
+        --terra: #c4543a;
+        --display: "Cormorant Garamond", serif;
+        --title: "Cinzel", serif;
+        --body: "Jost", sans-serif;
+      }
+
+      body {
+        background-color: var(--night);
+        color: var(--ivory);
+        font-family: var(--body);
+        margin: 0;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      section {
+        padding: 80px 10%;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: var(--display);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 400;
+      }
+      .gold {
+        color: var(--gold);
+      }
+      .label {
+        font-family: var(--title);
+        font-size: 11px;
+        letter-spacing: 0.4em;
+        color: var(--gold);
+        display: block;
+        margin-bottom: 1rem;
+      }
+
+      /* Hero */
+      .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background:
+          linear-gradient(rgba(13, 10, 6, 0.7), rgba(13, 10, 6, 0.7)),
+          url("Villa Leonessa - Sartorial Identity_2.pdf");
+        background-size: cover;
+      }
+      .hero h1 {
+        font-size: 4rem;
+        margin: 0.5rem 0;
+      }
+
+      /* Vision Split */
+      .vision-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+      .vision-block h3 {
+        font-family: var(--title);
+        font-size: 14px;
+        margin-bottom: 1rem;
+      }
+
+      /* Department Cards */
+      .dept-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+      .dept-card {
+        border: 1px solid rgba(201, 168, 76, 0.2);
+        padding: 0;
+        background: rgba(255, 255, 255, 0.02);
+      }
+      .dept-image {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+        display: block;
+      }
+      .dept-info {
+        padding: 2rem;
+      }
+
+      /* Matrix Table */
+      .matrix-container {
+        overflow-x: auto;
+        margin-top: 3rem;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: var(--body);
+      }
+      th {
+        text-align: left;
+        border-bottom: 1px solid var(--gold);
+        padding: 1rem;
+        color: var(--gold);
+        font-family: var(--title);
+        font-size: 10px;
+        letter-spacing: 0.2em;
+      }
+      td {
+        padding: 1.5rem 1rem;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+        color: var(--stone);
+        font-size: 14px;
+      }
+
+      /* Pillars */
+      .pillar-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        text-align: center;
+      }
+      .pillar h4 {
+        font-family: var(--title);
+        color: var(--gold);
+        margin-bottom: 1rem;
+      }
+
+      @media (max-width: 768px) {
+        .vision-grid,
+        .pillar-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HERO SECTION -->
+    <header class="hero">
+      <span class="label">Brand Sartorial Guidelines</span>
+      <h1>Villa Leonessa</h1>
+      <p
+        style="
+          font-family: var(--display);
+          font-size: 1.5rem;
+          font-style: italic;
+        "
+      >
+        The Sartorial Identity
+      </p>
+      <p class="label" style="margin-top: 2rem">Bab Atlas · Marrakech</p>
+    </header>
+
+    <!-- SECTION 01: THE VISION -->
+    <section>
+      <span class="label">Section 01</span>
+      <h2 style="font-size: 3rem">
+        The Vision: <span class="gold">Heritage & Craft</span>
+      </h2>
+      <div class="vision-grid">
+        <div class="vision-block">
+          <h3>Italian Noble Tailoring</h3>
+          <p>
+            Rooted in the 11-century lineage of Prince Federico, the uniforms
+            prioritize structure, bespoke fit, and aristocratic presence. We
+            utilize Milanese silhouettes and fine linen-wool blends[cite: 5].
+          </p>
+        </div>
+        <div class="vision-block">
+          <h3>Moroccan Handcraft[cite: 5]</h3>
+          <p>
+            The local heritage is expressed through traditional embroidery
+            (Alamari), the integration of the Fez/Tarbouch, and breathable linen
+            fabrics suited for the Marrakech light[cite: 5].
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPARTMENTS -->
+    <section>
+      <span class="label">Staff Catalog</span>
+      <h2>Departmental <span class="gold">Identity</span>[cite: 5]</h2>
+
+      <div class="dept-grid">
+        <!-- Culinary -->
+        <div class="dept-card">
+          <img
+            src="img/chef-assistant.png"
+            alt="Culinary Team"
+            class="dept-image"
+          />
+          <div class="dept-info">
+            <span class="label">Culinary Team</span>
+            <h3>Gastronomic Nobility[cite: 5]</h3>
+            <p>
+              The uniform features high-collar white linen with the gold crowned
+              monogram prominently displayed on the chest[cite: 5].
+            </p>
+          </div>
+        </div>
+
+        <!-- Security -->
+        <div class="dept-card">
+          <img src="img/security.png" alt="Security Team" class="dept-image" />
+          <div class="dept-info">
+            <span class="label">Security & Protection</span>
+            <h3>Guardians of Leonessa[cite: 5]</h3>
+            <p>
+              'Leonessa Night' navy wool with traditional gold-threaded Alamari
+              closures and a structured velvet Fez[cite: 5].
+            </p>
+          </div>
+        </div>
+
+        <!-- Leadership -->
+        <div class="dept-card">
+          <img src="img/manager.png" alt="Leadership" class="dept-image" />
+          <div class="dept-info">
+            <span class="label">Leadership</span>
+            <h3>The Visionary Presence[cite: 5]</h3>
+            <p>
+              An Italian 'Spezzato' suit in navy and zellige blue, featuring
+              gold thread closures instead of standard buttons[cite: 5].
+            </p>
+          </div>
+        </div>
+
+        <!-- Interior -->
+        <div class="dept-card">
+          <img
+            src="img/housekeeping.png"
+            alt="Interior Service"
+            class="dept-image"
+          />
+          <div class="dept-info">
+            <span class="label">Interior Service</span>
+            <h3>The Art of Hospitality[cite: 5]</h3>
+            <p>
+              'Ivory Parchment' linen tunics with 'Zellige Blue' accents and
+              Selham-style draping[cite: 5].
+            </p>
+          </div>
+        </div>
+
+        <!-- Maintenance -->
+        <div class="dept-card">
+          <img
+            src="img/gardening.png"
+            alt="Estate Maintenance"
+            class="dept-image"
+          />
+          <div class="dept-info">
+            <span class="label">Estate Maintenance</span>
+            <h3>Stewards of the Earth[cite: 5]</h3>
+            <p>
+              Heavy cotton and linen in 'Marrakech Rose' and 'Ivory' tones with
+              refined straw hats[cite: 5].
+            </p>
+          </div>
+        </div>
+
+        <!-- Engineering -->
+        <div class="dept-card">
+          <img src="img/mantaince.png" alt="Engineering" class="dept-image" />
+          <div class="dept-info">
+            <span class="label">Engineering & Craft</span>
+            <h3>Masters of Infrastructure[cite: 5]</h3>
+            <p>
+              Structured utility jackets in terracotta twill with custom leather
+              belts etched with the Villa Leonessa wordmark[cite: 5].
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATTIRE PILLARS -->
+    <section>
+      <span class="label">Philosophy</span>
+      <h2 style="text-align: center; margin-bottom: 3rem">
+        Attire <span class="gold">Pillars</span>[cite: 5]
+      </h2>
+      <div class="pillar-grid">
+        <div class="pillar">
+          <h4>Aristocratic[cite: 5]</h4>
+          <p>
+            Every piece conveys belonging to an 11-century lineage, never loud
+            but always certain[cite: 5].
+          </p>
+        </div>
+        <div class="pillar">
+          <h4>Sensorial[cite: 5]</h4>
+          <p>
+            Tactile quality—linen, silk, and velvet—designed for the unique
+            Marrakech light[cite: 5].
+          </p>
+        </div>
+        <div class="pillar">
+          <h4>Timeless[cite: 5]</h4>
+          <p>
+            Avoiding trend-based "luxury," focusing on silhouettes that could
+            exist in 1920 or 2025[cite: 5].
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- UNIFORM MATRIX -->
+    <section>
+      <span class="label">Specifications</span>
+      <h2>Uniform <span class="gold">Matrix</span>[cite: 5]</h2>
+      <div class="matrix-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Department[cite: 5]</th>
+              <th>Primary Color[cite: 5]</th>
+              <th>Primary Material[cite: 5]</th>
+              <th>Identity Mark[cite: 5]</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Leadership[cite: 5]</td>
+              <td>Leonessa Night[cite: 5]</td>
+              <td>Wool/Silk Blend[cite: 5]</td>
+              <td>Gold Lapel Pin[cite: 5]</td>
+            </tr>
+            <tr>
+              <td>Security[cite: 5]</td>
+              <td>Leonessa Night[cite: 5]</td>
+              <td>Structured Wool[cite: 5]</td>
+              <td>Braided Monogram[cite: 5]</td>
+            </tr>
+            <tr>
+              <td>Kitchen[cite: 5]</td>
+              <td>Ivory Parchment[cite: 5]</td>
+              <td>Breathable Linen[cite: 5]</td>
+              <td>Chest Embroidery[cite: 5]</td>
+            </tr>
+            <tr>
+              <td>Housekeeping[cite: 5]</td>
+              <td>Ivory / Zellige Blue[cite: 5]</td>
+              <td>Soft Linen[cite: 5]</td>
+              <td>Shoulder Embroidery[cite: 5]</td>
+            </tr>
+            <tr>
+              <td>Maintenance[cite: 5]</td>
+              <td>Marrakech Rose[cite: 5]</td>
+              <td>Cotton Twill[cite: 5]</td>
+              <td>Leather Patch[cite: 5]</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer
+      style="
+        padding: 40px 10%;
+        text-align: center;
+        color: var(--stone);
+        font-size: 12px;
+        letter-spacing: 1px;
+      "
+    >
+      VILLA LEONESSA BAB ATLAS MARRAKECH · SARTORIAL REVIEW[cite: 5]
+    </footer>
+  </body>
+</html>
